@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="16" />
 
     <application
         android:allowBackup="true"
@@ -14,13 +14,45 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="phillykeyspots.frpapp.MainActivity"
+            android:name="com.example.phillykeyspots.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.phillykeyspots.SearchForKeyspotActivity"
+            android:label="@string/title_activity_search_for_keyspot"
+            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.phillykeyspots.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.phillykeyspots.FindResourcesActivity"
+            android:label="@string/title_activity_find_resources"
+            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.phillykeyspots.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.phillykeyspots.JoinOurMailingListActivity"
+            android:label="@string/title_activity_join_our_mailing_list"
+            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.phillykeyspots.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.phillykeyspots.FindEventsActivity"
+            android:label="@string/title_activity_find_events"
+            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.phillykeyspots.MainActivity" />
         </activity>
     </application>
 
