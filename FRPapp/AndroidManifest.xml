@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.phillykeyspots.MainActivity"
+            android:name="phillykeyspots.frpapp.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,36 +23,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.phillykeyspots.SearchForKeyspotActivity"
+            android:name="phillykeyspots.frpapp.SearchForKeyspotActivity"
             android:label="@string/title_activity_search_for_keyspot"
-            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.phillykeyspots.MainActivity" />
+                android:value="phillykeyspots.frpapp.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.phillykeyspots.FindResourcesActivity"
+            android:name="phillykeyspots.frpapp.FindResourcesActivity"
             android:label="@string/title_activity_find_resources"
-            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.phillykeyspots.MainActivity" />
+                android:value="cphillykeyspots.frpapp.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.phillykeyspots.JoinOurMailingListActivity"
+            android:name="phillykeyspots.frpapp.JoinOurMailingListActivity"
             android:label="@string/title_activity_join_our_mailing_list"
-            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            android:parentActivityName="cphillykeyspots.frpapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.phillykeyspots.MainActivity" />
+                android:value="phillykeyspots.frpapp.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.phillykeyspots.FindEventsActivity"
+            android:name="phillykeyspots.frpapp.FindEventsActivity"
             android:label="@string/title_activity_find_events"
-            android:parentActivityName="com.example.phillykeyspots.MainActivity" >
+            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.phillykeyspots.MainActivity" />
+                android:value="phillykeyspots.frpapp.MainActivity" />
         </activity>
     </application>
 
