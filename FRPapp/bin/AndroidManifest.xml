@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
@@ -21,38 +21,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="phillykeyspots.frpapp.SearchForKeyspotActivity"
-            android:label="@string/title_activity_search_for_keyspot"
-            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="phillykeyspots.frpapp.MainActivity" />
-        </activity>
-        <activity
-            android:name="phillykeyspots.frpapp.FindResourcesActivity"
-            android:label="@string/title_activity_find_resources"
-            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="cphillykeyspots.frpapp.MainActivity" />
-        </activity>
-        <activity
-            android:name="phillykeyspots.frpapp.JoinOurMailingListActivity"
-            android:label="@string/title_activity_join_our_mailing_list"
-            android:parentActivityName="cphillykeyspots.frpapp.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="phillykeyspots.frpapp.MainActivity" />
-        </activity>
-        <activity
-            android:name="phillykeyspots.frpapp.FindEventsActivity"
-            android:label="@string/title_activity_find_events"
-            android:parentActivityName="phillykeyspots.frpapp.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="phillykeyspots.frpapp.MainActivity" />
         </activity>
     </application>
 
