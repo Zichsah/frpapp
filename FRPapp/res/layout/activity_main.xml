@@ -14,7 +14,7 @@
         	android:layout_width="160dp"
         	android:layout_height="200dp"
         	android:text="@string/button_finder"
-        	android:onClick="keyspot_finder"/>
+        	android:onClick="dashboard"/>
         
    		<!--Training events button -->
    		<Button 
@@ -24,7 +24,7 @@
         	android:layout_width="160dp"
         	android:layout_height="200dp"
         	android:text="@string/button_events"
-        	android:onClick="events_finder"/>
+        	android:onClick="dashboard"/>
 
     <!-- Second Row -->
    		
@@ -35,7 +35,7 @@
 	        android:layout_width="160dp"
 	        android:layout_height="200dp"
 	        android:text="@string/button_resources"
-	        android:onClick="resources_finder" />
+	        android:onClick="dashboard" />
 
     	<!--Join our mailing list button-->
     	<Button 
@@ -45,6 +45,6 @@
 	        android:layout_width="160dp"
 	        android:layout_height="200dp"
 	        android:text="@string/button_joml"
-	        android:onClick="joml_form"/>
+	        android:onClick="dashboard"/>
 
 </RelativeLayout>
