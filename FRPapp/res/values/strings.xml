@@ -16,5 +16,40 @@
     <string name="title_activity_joml_fragment">JomlFragment</string>
     <string name="title_activity_resources_fragment">ResourcesFragment</string>
     <string name="title_activity_events_fragment">EventsFragment</string>
+        <!-- Events filter -->
+    <string name="byZIP_header"><b>By ZIP</b></string>
+    <string name="byDate_header"><b>By Date</b></string>
+    <string name="byLevel_header"><b>By Level</b></string>
+    <string name="ZIP_caption">Enter a zip code to search for trainings in your area</string>
+    <string name="Date_caption">Please select a date to filter the results</string>
+    <string name="ZIPtext">Enter a ZIP Code</string>
+    <string name="b_search">Search</string>
+    <string name="pick_date">Calendar : Pick a Date</string>
+    <string name="checkbx_all_levels">All Levels </string>
+    <string name="all_levels_caption"><i>Select all levels to choose all available levels</i></string>
+    <string name="checkbx_first_time">First-Time</string>
+    <string name="first_time_caption"><i>I have not used a mouse and keyboard</i></string>
+    <string name="checkbx_beginner">Beginner</string>
+    <string name="beginner_caption"><i>I can use a mouse and a keyboard</i></string>
+    <string name="checkbx_intermediate">Intermediate</string>
+    <string name="intermediate_caption"><i>I am comfortable using the Internet</i></string>
+    <string name="checkbx_advanced">Advanced</string>
+    <string name="advanced_caption"><i>Skilled with the Internet\Software</i></string>
+    <string name="checkbx_tech_expert">Tech Expert</string>
+    <string name="tech_expert_caption"><i>Highly Developed Skills</i></string>
+    <!-- JOML -->
+    <string name="joml">Will have form that sends users information into the joml webform to Drupal</string>
+    <string name="email">Email</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="zipcode">ZIP code</string>
+    <string name="phone">Phone #</string>
+    <string name="phone_caption"><i>Format example: 215-555-1212 ext.123</i></string>
+    <string name="joml1">I want to receive an email newsletter to learn more about upcoming trainings and events</string>
+    <string name="joml2">I want information about upcoming computer training programs only</string>
+    <string name="joml3">I want information about upcoming events only</string>
+    <string name="submit">Submit</string>
+    <!-- Keyspot -->
+    <string name="byZIP_caption">Enter a ZIP Code to find a keyspot in your area</string>
 
 </resources>

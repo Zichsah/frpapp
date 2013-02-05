@@ -18,10 +18,12 @@ public final class R {
         public static final int b_finder=0x7f070001;
         public static final int b_joml=0x7f070004;
         public static final int b_resources=0x7f070003;
-        public static final int f_finder=0x7f070005;
-        public static final int f_joml=0x7f070006;
         public static final int fragment_container=0x7f070000;
-        public static final int menu_settings=0x7f070007;
+        public static final int joml1=0x7f070006;
+        public static final int joml2=0x7f070007;
+        public static final int joml3=0x7f070008;
+        public static final int joml_eaddress=0x7f070005;
+        public static final int menu_settings=0x7f070009;
     }
     public static final class layout {
         public static final int activity_dashboard=0x7f030000;
@@ -39,13 +41,50 @@ public final class R {
         public static final int fragment_resources=0x7f060004;
     }
     public static final class string {
+        public static final int Date_caption=0x7f040013;
+        public static final int ZIP_caption=0x7f040012;
+        public static final int ZIPtext=0x7f040014;
+        public static final int advanced_caption=0x7f040020;
+        public static final int all_levels_caption=0x7f040018;
         public static final int app_name=0x7f040000;
+        public static final int b_search=0x7f040015;
+        public static final int beginner_caption=0x7f04001c;
         public static final int button_events=0x7f040002;
         public static final int button_finder=0x7f040001;
         public static final int button_joml=0x7f040004;
         public static final int button_resources=0x7f040003;
+        public static final int byDate_header=0x7f040010;
+        public static final int byLevel_header=0x7f040011;
+        /**  Keyspot 
+         */
+        public static final int byZIP_caption=0x7f04002e;
+        /**  Events filter 
+         */
+        public static final int byZIP_header=0x7f04000f;
+        public static final int checkbx_advanced=0x7f04001f;
+        public static final int checkbx_all_levels=0x7f040017;
+        public static final int checkbx_beginner=0x7f04001b;
+        public static final int checkbx_first_time=0x7f040019;
+        public static final int checkbx_intermediate=0x7f04001d;
+        public static final int checkbx_tech_expert=0x7f040021;
+        public static final int email=0x7f040024;
+        public static final int first_time_caption=0x7f04001a;
+        public static final int fname=0x7f040025;
         public static final int hello_world=0x7f040006;
+        public static final int intermediate_caption=0x7f04001e;
+        /**  JOML 
+         */
+        public static final int joml=0x7f040023;
+        public static final int joml1=0x7f04002a;
+        public static final int joml2=0x7f04002b;
+        public static final int joml3=0x7f04002c;
+        public static final int lname=0x7f040026;
         public static final int menu_settings=0x7f040005;
+        public static final int phone=0x7f040028;
+        public static final int phone_caption=0x7f040029;
+        public static final int pick_date=0x7f040016;
+        public static final int submit=0x7f04002d;
+        public static final int tech_expert_caption=0x7f040022;
         public static final int title_activity_dashboard=0x7f04000b;
         public static final int title_activity_events_fragment=0x7f04000e;
         public static final int title_activity_find_events=0x7f04000a;
@@ -54,6 +93,7 @@ public final class R {
         public static final int title_activity_joml_fragment=0x7f04000c;
         public static final int title_activity_resources_fragment=0x7f04000d;
         public static final int title_activity_search_for_keyspot=0x7f040007;
+        public static final int zipcode=0x7f040027;
     }
     public static final class style {
         /** 

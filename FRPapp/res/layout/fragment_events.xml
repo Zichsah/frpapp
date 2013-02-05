@@ -1,14 +1,142 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsFragment" >
-
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="10dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="5dp">
+    
+    <!-- Search by ZIP section -->
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/byZIP_header"
+        android:textSize="12sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ZIP_caption"
+        android:textSize="10sp"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/ZIPtext"
+            android:textSize="12sp"/>
+        <Button android:id="@+id/b_events"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/b_search"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    <!-- Search by Date section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/byDate_header"
+        android:textSize="12sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Date_caption"
+        android:textSize="10sp" />
+    <Button 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:text="@string/pick_date"
+        android:textSize="12sp"
+        android:onClick="showDatePickerDialog" />
 
-</RelativeLayout>
+    <!-- Search by Level section -->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/byLevel_header"
+	        android:textSize="12sp" /> 
+	    <CheckBox 
+	        android:text="@string/checkbx_all_levels"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/all_levels_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp"/> 
+	    <CheckBox
+	        android:text="@string/checkbx_first_time"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="-10dp"
+	        android:layout_marginTop="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/first_time_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp" /> 
+	    <CheckBox
+	        android:text="@string/checkbx_beginner"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="-10dp"
+	        android:layout_marginTop="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/beginner_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp" /> 
+	    <CheckBox
+	        android:text="@string/checkbx_intermediate"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:paddingLeft="40dp"
+	        android:layout_marginBottom="-10dp"
+	        android:layout_marginTop="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/intermediate_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp" /> 
+	    <CheckBox
+	        android:text="@string/checkbx_advanced"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="-10dp"
+	        android:layout_marginTop="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/advanced_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp" /> 
+	    <CheckBox
+	        android:text="@string/checkbx_tech_expert"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="12sp"
+	        android:layout_marginBottom="-10dp"
+	        android:layout_marginTop="-10dp"/>
+	    <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/tech_expert_caption"
+	        android:textSize="10sp"
+	        android:paddingLeft="45dp" /> 
+    </LinearLayout>
+</LinearLayout>
