@@ -15,10 +15,12 @@ public class DashboardActivity extends FragmentActivity {
 		case R.id.b_finder:
 			fragment = new FinderFragment();
 			break;
-		/*case R.id.b_events:
+		case R.id.b_events:
+			fragment = new EventsFragment();
 			break;
 		case R.id.b_resources:
-			break;*/
+			fragment = new ResourcesFragment();
+			break;
 		case R.id.b_joml:
 			fragment = new JomlFragment();
 			break;
