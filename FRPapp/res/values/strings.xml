@@ -12,5 +12,6 @@
     <string name="title_activity_find_resources"> RESOURCES</string>
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
     <string name="title_activity_find_events"> TRAINING EVENTS</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
 
 </resources>
