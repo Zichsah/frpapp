@@ -13,5 +13,8 @@
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
     <string name="title_activity_find_events"> TRAINING EVENTS</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_joml_fragment">JomlFragment</string>
+    <string name="title_activity_resources_fragment">ResourcesFragment</string>
+    <string name="title_activity_events_fragment">EventsFragment</string>
 
 </resources>

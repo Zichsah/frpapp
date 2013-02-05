@@ -11,16 +11,17 @@ public class DashboardActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dashboard);
 		Fragment fragment;
-		switch(getIntent().getIntExtra("ID", R.id.b_finder)){
+		switch(Integer.parseInt(getIntent().getExtras().get("ID").toString())){
 		case R.id.b_finder:
 			fragment = new FinderFragment();
 			break;
 		/*case R.id.b_events:
 			break;
 		case R.id.b_resources:
-			break;
-		case R.id.b_joml:
 			break;*/
+		case R.id.b_joml:
+			fragment = new JomlFragment();
+			break;
 		default:
 			fragment = new FinderFragment();
 		}

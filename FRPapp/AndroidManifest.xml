@@ -26,6 +26,18 @@
             android:name="phillykeyspots.frpapp.DashboardActivity"
             android:label="@string/title_activity_dashboard" >
         </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.JomlFragment"
+            android:label="@string/title_activity_joml_fragment" >
+        </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.ResourcesFragment"
+            android:label="@string/title_activity_resources_fragment" >
+        </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.EventsFragment"
+            android:label="@string/title_activity_events_fragment" >
+        </activity>
     </application>
 
 </manifest>
