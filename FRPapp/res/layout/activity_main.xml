@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:paddingTop="32dp"
-    android:paddingBottom="32dp">
-    
-    <!-- First Row -->
-        
-        <!--KEYSPOTFinder button.-->
-        <Button 
-            android:id="@+id/b_finder"
-            android:layout_alignParentTop="true"
-        	android:layout_width="160dp"
-        	android:layout_height="200dp"
-        	android:text="@string/button_finder"
-        	android:onClick="dashboard"/>
-        
-   		<!--Training events button -->
-   		<Button 
-   		    android:id="@+id/b_events"
-   		    android:layout_alignParentTop="true"
-   		    android:layout_toRightOf="@+id/b_finder"
-        	android:layout_width="160dp"
-        	android:layout_height="200dp"
-        	android:text="@string/button_events"
-        	android:onClick="dashboard"/>
-
-    <!-- Second Row -->
-   		
-        <!--Resources button-->
-    	<Button
-    	    android:id="@+id/b_resources"
-    	    android:layout_below="@+id/b_finder"
-	        android:layout_width="160dp"
-	        android:layout_height="200dp"
-	        android:text="@string/button_resources"
-	        android:onClick="dashboard" />
-
-    	<!--Join our mailing list button-->
-    	<Button 
-    	    android:id="@+id/b_joml"
-    	    android:layout_below="@+id/b_events"
-    	    android:layout_toRightOf="@+id/b_resources"
-	        android:layout_width="160dp"
-	        android:layout_height="200dp"
-	        android:text="@string/button_joml"
-	        android:onClick="dashboard"/>
-
-</RelativeLayout>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="phillykeyspots.frpapp.DashboardFragment"
+	android:id="@+id/dashboard_fragment"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" />
