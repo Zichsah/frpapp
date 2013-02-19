@@ -68,21 +68,6 @@ public class DashboardActivity extends FragmentActivity {
 		public int getCount() {
 			return 4;
 		}
-
-		@Override
-		public CharSequence getPageTitle(int position) {
-			switch (position) {
-			case 0:
-				return getString(R.string.title_activity_search_for_keyspot).toUpperCase();
-			case 1:
-				return getString(R.string.title_activity_find_events).toUpperCase();
-			case 2:
-				return getString(R.string.title_activity_find_resources).toUpperCase();
-			case 3:
-				return getString(R.string.title_activity_join_our_mailing_list).toUpperCase();
-			}
-			return null;
-		}
 	}
 
 }

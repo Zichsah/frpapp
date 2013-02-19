@@ -12,11 +12,7 @@
     <string name="title_activity_find_resources"> RESOURCES</string>
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
     <string name="title_activity_find_events"> TRAINING EVENTS</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
-    <string name="title_activity_joml_fragment">JomlFragment</string>
-    <string name="title_activity_resources_fragment">ResourcesFragment</string>
-    <string name="title_activity_events_fragment">EventsFragment</string>
-        <!-- Events filter -->
+    <!-- Events filter -->
     <string name="byZIP_header"><b>By ZIP</b></string>
     <string name="byDate_header"><b>By Date</b></string>
     <string name="byLevel_header"><b>By Level</b></string>
@@ -51,5 +47,6 @@
     <string name="submit">Submit</string>
     <!-- Keyspot -->
     <string name="byZIP_caption">Enter a ZIP Code to find a keyspot in your area</string>
+    <string name="title_activity_dashboard_fragment">DashboardFragment</string>
 
 </resources>
