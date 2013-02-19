@@ -1,5 +1,6 @@
 package phillykeyspots.frpapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
+@SuppressLint("DefaultLocale")
 public class DashboardActivity extends FragmentActivity {
 	
 	private FinderFragment finder = new FinderFragment();
