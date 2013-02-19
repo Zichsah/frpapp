@@ -14,7 +14,4 @@ public class EventsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_events, container, false);
     }
-	public void showDatePickerDialog(View view){
-		
-	}
 }
