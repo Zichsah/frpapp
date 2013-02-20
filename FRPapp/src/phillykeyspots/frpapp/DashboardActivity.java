@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 @SuppressLint("DefaultLocale")
 public class DashboardActivity extends FragmentActivity {
@@ -68,6 +69,10 @@ public class DashboardActivity extends FragmentActivity {
 		public int getCount() {
 			return 4;
 		}
+	}
+		
+	public void search(View view){
+			
 	}
 
 }
