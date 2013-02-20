@@ -29,7 +29,6 @@ public class FinderFragment extends Fragment {
 
 		window_click = new OnInfoWindowClickListener(){
 
-			@Override
 			public void onInfoWindowClick(Marker arg0) {
 				// TODO Auto-generated method stub
 			}

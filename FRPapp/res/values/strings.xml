@@ -12,10 +12,15 @@
     <string name="title_activity_find_resources"> RESOURCES</string>
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
     <string name="title_activity_find_events"> TRAINING EVENTS</string>
+    <string name="title_activity_events">Events Activity</string>
+    <string name="title_activity_settings">Settings Activity</string>
+    <string name="title_activity_keyspots">Keyspots Activity</string>
     <!-- Events filter -->
     <string name="byZIP_header"><b>By ZIP</b></string>
     <string name="byDate_header"><b>By Date</b></string>
     <string name="byLevel_header"><b>By Level</b></string>
+    <string name="byTopics_header"><b>By Topics</b></string>
+    <string name="byOtherInfo_header"><b>By Other Info</b></string>
     <string name="ZIP_caption">Enter a zip code to search for trainings in your area</string>
     <string name="Date_caption">Please select a date to filter the results</string>
     <string name="ZIPtext">Enter a ZIP Code</string>
@@ -32,7 +37,16 @@
     <string name="checkbx_advanced">Advanced</string>
     <string name="advanced_caption"><i>Skilled with the Internet\Software</i></string>
     <string name="checkbx_tech_expert">Tech Expert</string>
-    <string name="tech_expert_caption"><i>Highly Developed Skills</i></string>
+    <string name="tech_expert_caption"><i>Highly Developed Skills</i></string><string name="events_loading">Loading events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
+    <string name="advanced_search"><b>Advanced Search</b></string>
+    <string name="advanced_search_caption">Select checkboxes below to find training classes that meet your interests.</string>
+    <string name="checkbx_web_access">Web Access</string>
+    <string name="checkbx_computer_basics">Computer Basics</string>
+    <string name="checkbx_internet_basics">Internet Basics</string>
+    <string name="checkbx_ms_office">MS Office</string>
+    <string name="checkbx_social_media">Social Media</string>
+    <string name="checkbx_job_search">Job Search/Readiness</string>
+
     <!-- JOML -->
     <string name="joml">Will have form that sends users information into the joml webform to Drupal</string>
     <string name="email">Email</string>
@@ -48,5 +62,15 @@
     <!-- Keyspot -->
     <string name="byZIP_caption">Enter a ZIP Code to find a keyspot in your area</string>
     <string name="title_activity_dashboard_fragment">DashboardFragment</string>
+    <!-- HTTP Requests -->
+    <string name="connection_error">Connection Error: The app cannot download content, because the network connection is unavailable</string>
+    <string name="xml_error">XML Error: An xml error has occurred, check http request</string>
+    <string name="settings">Settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="page_title_events">Search Results</string>
+    <string name="page_title_keyspots">KEYSPOTS List</string>
+    <string name="updated">Last Updated </string>
+    <string name="wifi_connected">Wi-Fi Connected</string>
+    <string name="lost_connection">Lost Connection</string>
 
 </resources>
