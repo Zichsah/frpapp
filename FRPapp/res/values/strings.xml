@@ -48,5 +48,6 @@
     <!-- Keyspot -->
     <string name="byZIP_caption">Enter a ZIP Code to find a keyspot in your area</string>
     <string name="title_activity_dashboard_fragment">DashboardFragment</string>
+    <string name="title_activity_keyspot">KeyspotActivity</string>
 
 </resources>

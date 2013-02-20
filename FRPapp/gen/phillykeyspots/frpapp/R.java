@@ -151,20 +151,22 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_dashboard=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int fragment_dashboard=0x7f030002;
-        public static final int fragment_events=0x7f030003;
-        public static final int fragment_finder=0x7f030004;
-        public static final int fragment_joml=0x7f030005;
-        public static final int fragment_resources=0x7f030006;
+        public static final int activity_keyspot=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int fragment_dashboard=0x7f030003;
+        public static final int fragment_events=0x7f030004;
+        public static final int fragment_finder=0x7f030005;
+        public static final int fragment_joml=0x7f030006;
+        public static final int fragment_resources=0x7f030007;
     }
     public static final class menu {
         public static final int activity_dashboard=0x7f070000;
-        public static final int activity_main=0x7f070001;
-        public static final int fragment_dashboard=0x7f070002;
-        public static final int fragment_events=0x7f070003;
-        public static final int fragment_joml=0x7f070004;
-        public static final int fragment_resources=0x7f070005;
+        public static final int activity_keyspot=0x7f070001;
+        public static final int activity_main=0x7f070002;
+        public static final int fragment_dashboard=0x7f070003;
+        public static final int fragment_events=0x7f070004;
+        public static final int fragment_joml=0x7f070005;
+        public static final int fragment_resources=0x7f070006;
     }
     public static final class string {
         public static final int Date_caption=0x7f05001a;
@@ -258,6 +260,7 @@ containing a value of this type.
         public static final int title_activity_find_events=0x7f050015;
         public static final int title_activity_find_resources=0x7f050013;
         public static final int title_activity_join_our_mailing_list=0x7f050014;
+        public static final int title_activity_keyspot=0x7f050037;
         public static final int title_activity_search_for_keyspot=0x7f050012;
         public static final int zipcode=0x7f05002e;
     }
