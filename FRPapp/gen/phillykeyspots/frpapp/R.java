@@ -8,6 +8,10 @@
 package phillykeyspots.frpapp;
 
 public final class R {
+    public static final class array {
+        public static final int listArray=0x7f070000;
+        public static final int listValues=0x7f070001;
+    }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
@@ -132,134 +136,180 @@ containing a value of this type.
         public static final int map_pin=0x7f020001;
     }
     public static final class id {
-        public static final int b_events=0x7f040007;
-        public static final int b_finder=0x7f040006;
-        public static final int b_joml=0x7f040009;
-        public static final int b_resources=0x7f040008;
-        public static final int dashboard_fragment=0x7f040005;
-        public static final int fragment_container=0x7f040004;
-        public static final int joml1=0x7f04000c;
-        public static final int joml2=0x7f04000d;
-        public static final int joml3=0x7f04000e;
-        public static final int joml_eaddress=0x7f04000b;
-        public static final int map=0x7f04000a;
-        public static final int menu_settings=0x7f04000f;
-        public static final int none=0x7f040000;
-        public static final int normal=0x7f040001;
-        public static final int satellite=0x7f040002;
-        public static final int terrain=0x7f040003;
+        public static final int b_events=0x7f050009;
+        public static final int b_finder=0x7f050008;
+        public static final int b_joml=0x7f05000b;
+        public static final int b_resources=0x7f05000a;
+        public static final int checkbx_advanced=0x7f050012;
+        public static final int checkbx_all_levels=0x7f05000e;
+        public static final int checkbx_beginner=0x7f050010;
+        public static final int checkbx_computer_basics=0x7f050015;
+        public static final int checkbx_first_time=0x7f05000f;
+        public static final int checkbx_intermediate=0x7f050011;
+        public static final int checkbx_internet_basics=0x7f050016;
+        public static final int checkbx_job_search=0x7f050019;
+        public static final int checkbx_ms_office=0x7f050017;
+        public static final int checkbx_social_media=0x7f050018;
+        public static final int checkbx_tech_expert=0x7f050013;
+        public static final int checkbx_web_access=0x7f050014;
+        public static final int dashboard_fragment=0x7f050007;
+        public static final int enter_zip_code=0x7f05000d;
+        public static final int fragment_container=0x7f050004;
+        public static final int joml1=0x7f05001c;
+        public static final int joml2=0x7f05001d;
+        public static final int joml3=0x7f05001e;
+        public static final int joml_eaddress=0x7f05001b;
+        public static final int map=0x7f05001a;
+        public static final int menu_settings=0x7f05001f;
+        public static final int none=0x7f050000;
+        public static final int normal=0x7f050001;
+        public static final int panel1=0x7f05000c;
+        public static final int refresh=0x7f050021;
+        public static final int satellite=0x7f050002;
+        public static final int settings=0x7f050020;
+        public static final int terrain=0x7f050003;
+        public static final int webviewevents=0x7f050005;
+        public static final int webviewkeyspots=0x7f050006;
     }
     public static final class layout {
         public static final int activity_dashboard=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int fragment_dashboard=0x7f030002;
-        public static final int fragment_events=0x7f030003;
-        public static final int fragment_finder=0x7f030004;
-        public static final int fragment_joml=0x7f030005;
-        public static final int fragment_resources=0x7f030006;
+        public static final int activity_events=0x7f030001;
+        public static final int activity_keyspots=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int fragment_dashboard=0x7f030004;
+        public static final int fragment_events=0x7f030005;
+        public static final int fragment_finder=0x7f030006;
+        public static final int fragment_joml=0x7f030007;
+        public static final int fragment_resources=0x7f030008;
     }
     public static final class menu {
-        public static final int activity_dashboard=0x7f070000;
-        public static final int activity_main=0x7f070001;
-        public static final int fragment_dashboard=0x7f070002;
-        public static final int fragment_events=0x7f070003;
-        public static final int fragment_joml=0x7f070004;
-        public static final int fragment_resources=0x7f070005;
+        public static final int activity_dashboard=0x7f090000;
+        public static final int activity_main=0x7f090001;
+        public static final int fragment_dashboard=0x7f090002;
+        public static final int fragment_events=0x7f090003;
+        public static final int fragment_joml=0x7f090004;
+        public static final int fragment_resources=0x7f090005;
+        public static final int http_feed=0x7f090006;
     }
     public static final class string {
-        public static final int Date_caption=0x7f05001a;
-        public static final int ZIP_caption=0x7f050019;
-        public static final int ZIPtext=0x7f05001b;
-        public static final int advanced_caption=0x7f050027;
-        public static final int all_levels_caption=0x7f05001f;
-        public static final int app_name=0x7f05000b;
-        public static final int b_search=0x7f05001c;
-        public static final int beginner_caption=0x7f050023;
-        public static final int button_events=0x7f05000d;
-        public static final int button_finder=0x7f05000c;
-        public static final int button_joml=0x7f05000f;
-        public static final int button_resources=0x7f05000e;
-        public static final int byDate_header=0x7f050017;
-        public static final int byLevel_header=0x7f050018;
+        public static final int Date_caption=0x7f06001f;
+        public static final int ZIP_caption=0x7f06001e;
+        public static final int ZIPtext=0x7f060020;
+        public static final int advanced_caption=0x7f06002c;
+        public static final int advanced_search=0x7f060030;
+        public static final int advanced_search_caption=0x7f060031;
+        public static final int all_levels_caption=0x7f060024;
+        public static final int app_name=0x7f06000b;
+        public static final int b_search=0x7f060021;
+        public static final int beginner_caption=0x7f060028;
+        public static final int button_events=0x7f06000d;
+        public static final int button_finder=0x7f06000c;
+        public static final int button_joml=0x7f06000f;
+        public static final int button_resources=0x7f06000e;
+        public static final int byDate_header=0x7f06001a;
+        public static final int byLevel_header=0x7f06001b;
+        public static final int byOtherInfo_header=0x7f06001d;
+        public static final int byTopics_header=0x7f06001c;
         /**  Keyspot 
          */
-        public static final int byZIP_caption=0x7f050035;
+        public static final int byZIP_caption=0x7f060043;
         /**  Events filter 
          */
-        public static final int byZIP_header=0x7f050016;
-        public static final int checkbx_advanced=0x7f050026;
-        public static final int checkbx_all_levels=0x7f05001e;
-        public static final int checkbx_beginner=0x7f050022;
-        public static final int checkbx_first_time=0x7f050020;
-        public static final int checkbx_intermediate=0x7f050024;
-        public static final int checkbx_tech_expert=0x7f050028;
+        public static final int byZIP_header=0x7f060019;
+        public static final int checkbx_advanced=0x7f06002b;
+        public static final int checkbx_all_levels=0x7f060023;
+        public static final int checkbx_beginner=0x7f060027;
+        public static final int checkbx_computer_basics=0x7f060033;
+        public static final int checkbx_first_time=0x7f060025;
+        public static final int checkbx_intermediate=0x7f060029;
+        public static final int checkbx_internet_basics=0x7f060034;
+        public static final int checkbx_job_search=0x7f060037;
+        public static final int checkbx_ms_office=0x7f060035;
+        public static final int checkbx_social_media=0x7f060036;
+        public static final int checkbx_tech_expert=0x7f06002d;
+        public static final int checkbx_web_access=0x7f060032;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=30] 
          */
-        public static final int common_google_play_services_enable_button=0x7f050006;
+        public static final int common_google_play_services_enable_button=0x7f060006;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f050005;
+        public static final int common_google_play_services_enable_text=0x7f060005;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f050004;
+        public static final int common_google_play_services_enable_title=0x7f060004;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=30] 
          */
-        public static final int common_google_play_services_install_button=0x7f050003;
+        public static final int common_google_play_services_install_button=0x7f060003;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f050001;
+        public static final int common_google_play_services_install_text_phone=0x7f060001;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f050002;
+        public static final int common_google_play_services_install_text_tablet=0x7f060002;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f050000;
+        public static final int common_google_play_services_install_title=0x7f060000;
         /**  Message in confirmation dialog informing user there is an unknow issue in Google Player
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f050009;
+        public static final int common_google_play_services_unknown_issue=0x7f060009;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=20] 
          */
-        public static final int common_google_play_services_update_button=0x7f05000a;
+        public static final int common_google_play_services_update_button=0x7f06000a;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f050008;
+        public static final int common_google_play_services_update_text=0x7f060008;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f050007;
-        public static final int email=0x7f05002b;
-        public static final int first_time_caption=0x7f050021;
-        public static final int fname=0x7f05002c;
-        public static final int hello_world=0x7f050011;
-        public static final int intermediate_caption=0x7f050025;
+        public static final int common_google_play_services_update_title=0x7f060007;
+        /**  HTTP Requests 
+         */
+        public static final int connection_error=0x7f060045;
+        public static final int email=0x7f060039;
+        public static final int events_loading=0x7f06002f;
+        public static final int first_time_caption=0x7f060026;
+        public static final int fname=0x7f06003a;
+        public static final int hello_world=0x7f060011;
+        public static final int intermediate_caption=0x7f06002a;
         /**  JOML 
          */
-        public static final int joml=0x7f05002a;
-        public static final int joml1=0x7f050031;
-        public static final int joml2=0x7f050032;
-        public static final int joml3=0x7f050033;
-        public static final int lname=0x7f05002d;
-        public static final int menu_settings=0x7f050010;
-        public static final int phone=0x7f05002f;
-        public static final int phone_caption=0x7f050030;
-        public static final int pick_date=0x7f05001d;
-        public static final int submit=0x7f050034;
-        public static final int tech_expert_caption=0x7f050029;
-        public static final int title_activity_dashboard_fragment=0x7f050036;
-        public static final int title_activity_find_events=0x7f050015;
-        public static final int title_activity_find_resources=0x7f050013;
-        public static final int title_activity_join_our_mailing_list=0x7f050014;
-        public static final int title_activity_search_for_keyspot=0x7f050012;
-        public static final int zipcode=0x7f05002e;
+        public static final int joml=0x7f060038;
+        public static final int joml1=0x7f06003f;
+        public static final int joml2=0x7f060040;
+        public static final int joml3=0x7f060041;
+        public static final int lname=0x7f06003b;
+        public static final int lost_connection=0x7f06004d;
+        public static final int menu_settings=0x7f060010;
+        public static final int page_title_events=0x7f060049;
+        public static final int page_title_keyspots=0x7f06004a;
+        public static final int phone=0x7f06003d;
+        public static final int phone_caption=0x7f06003e;
+        public static final int pick_date=0x7f060022;
+        public static final int refresh=0x7f060048;
+        public static final int settings=0x7f060047;
+        public static final int submit=0x7f060042;
+        public static final int tech_expert_caption=0x7f06002e;
+        public static final int title_activity_dashboard_fragment=0x7f060044;
+        public static final int title_activity_events=0x7f060016;
+        public static final int title_activity_find_events=0x7f060015;
+        public static final int title_activity_find_resources=0x7f060013;
+        public static final int title_activity_join_our_mailing_list=0x7f060014;
+        public static final int title_activity_keyspots=0x7f060018;
+        public static final int title_activity_search_for_keyspot=0x7f060012;
+        public static final int title_activity_settings=0x7f060017;
+        public static final int updated=0x7f06004b;
+        public static final int wifi_connected=0x7f06004c;
+        public static final int xml_error=0x7f060046;
+        public static final int zipcode=0x7f06003c;
     }
     public static final class style {
         /** 
@@ -283,11 +333,14 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f080001;
+    }
+    public static final class xml {
+        public static final int preferences=0x7f040000;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.
