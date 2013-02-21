@@ -25,59 +25,29 @@ public class DashboardActivity extends FragmentActivity {
 	private EventsFragment events = new EventsFragment();
 	private ResourcesFragment resources = new ResourcesFragment();
 	private JomlFragment joml = new JomlFragment();
-	SectionsPagerAdapter mSectionsPagerAdapter;
-	ViewPager mViewPager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dashboard);
 		
-		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-		mViewPager = (ViewPager) findViewById(R.id.fragment_container);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+		Fragment frag = null;
 		
 		switch(Integer.parseInt(getIntent().getExtras().get("ID").toString())){
 		case R.id.b_finder:
-			mViewPager.setCurrentItem(0);
+			frag = finder;
 			break;
 		case R.id.b_events:
-			mViewPager.setCurrentItem(1);
+			frag = events;
 			break;
 		case R.id.b_resources:
-			mViewPager.setCurrentItem(2);
+			frag = resources;
 			break;
 		case R.id.b_joml:
-			mViewPager.setCurrentItem(3);
+			frag = joml;
 			break;
 		}
-	}
-	public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-		public SectionsPagerAdapter(FragmentManager fm) {
-			super(fm);
-		}
-
-		@Override
-		public Fragment getItem(int position) {
-			switch(position){
-			case(0):
-				return finder;
-			case(1):
-				return events;
-			case(2):
-				return resources;
-			case(3):
-				return joml;
-			}
-			return null;
-		}
-
-		@Override
-		public int getCount() {
-			return 4;
-		}
+		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag).commit();
 	}
 		
 	public void search(View view){
