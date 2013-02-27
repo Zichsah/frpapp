@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context=".EventsActivity" >
-
-	    <WebView android:id="@+id/webviewevents"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:textSize="12sp" />
-	
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="4dp">
+	<ListView 
+	    android:id="@android:id/list"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="2dp"
+	    android:paddingBottom="2dp"
+	    android:paddingLeft="16dp">
+	</ListView>
+	<TextView android:id="@+id/title"
+	    android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:textSize="12sp"
+	    android:textColor="@color/orange1595C"
+	    android:textStyle="bold"/>
+	<TextView android:id="@+id/date"
+	    android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:textSize="12sp"/>
+	<TextView android:id="@+id/keyspot"
+	    android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:textSize="12sp"
+	    android:textColor="@color/blue647C" />
+	<TextView android:id="@+id/e_k_address"
+	    android:visibility="gone"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	<TextView android:id="@+id/e_partner"
+	    android:visibility="gone"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	<TextView android:id="@+id/e_other_info"
+	    android:visibility="gone"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
 </LinearLayout>

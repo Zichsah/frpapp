@@ -23,6 +23,8 @@
     <string name="byOtherInfo_header"><b>By Other Info</b></string>
     <string name="ZIP_caption">Enter a zip code to search for trainings in your area</string>
     <string name="Date_caption">Please select a date to filter the results</string>
+    <string name="Level_caption">Find events according to skill levels</string>
+    <string name="Topics_caption">Find events according to available topics</string>
     <string name="ZIPtext">Enter a ZIP Code</string>
     <string name="b_search">Search</string>
     <string name="pick_date">Calendar : Pick a Date</string>
@@ -37,7 +39,8 @@
     <string name="checkbx_advanced">Advanced</string>
     <string name="advanced_caption"><i>Skilled with the Internet\Software</i></string>
     <string name="checkbx_tech_expert">Tech Expert</string>
-    <string name="tech_expert_caption"><i>Highly Developed Skills</i></string><string name="events_loading">Loading events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
+    <string name="tech_expert_caption"><i>Highly Developed Skills</i></string>
+    <string name="events_loading">Loading events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
     <string name="advanced_search"><b>Advanced Search</b></string>
     <string name="advanced_search_caption">Select checkboxes below to find training classes that meet your interests.</string>
     <string name="checkbx_web_access">Web Access</string>
@@ -46,6 +49,10 @@
     <string name="checkbx_ms_office">MS Office</string>
     <string name="checkbx_social_media">Social Media</string>
     <string name="checkbx_job_search">Job Search/Readiness</string>
+    <string name="event_title"><b>Event Title:</b></string>
+    <string name="event_date"><b>Event Date and Time:</b></string>
+    <string name="event_keyspot"><b>Keyspot:</b></string>
+    <string name="event_mpartner"><b>Managing Partner</b></string>
 
     <!-- JOML -->
     <string name="joml">Will have form that sends users information into the joml webform to Drupal</string>
@@ -72,5 +79,6 @@
     <string name="updated">Last Updated </string>
     <string name="wifi_connected">Wi-Fi Connected</string>
     <string name="lost_connection">Lost Connection</string>
+    <string name="title_activity_single_event_item">SingleEventItemActivity</string>
 
 </resources>

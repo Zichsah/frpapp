@@ -35,8 +35,14 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.Window;
+import android.webkit.WebView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -269,5 +275,38 @@ public class DashboardActivity extends FragmentActivity {
 		intent.putExtra("EXTRA_MESSAGE_KEYSPOTS", fullquery);
 		startActivity(intent);
 	}
-
+	
+	// Events view filter accordion style 
+		public void openPanel(View view){
+			LinearLayout p1 = (LinearLayout)findViewById(R.id.panel1);
+			LinearLayout p2 = (LinearLayout)findViewById(R.id.panel2);
+			LinearLayout p3 = (LinearLayout)findViewById(R.id.panel3);
+			LinearLayout p4 = (LinearLayout)findViewById(R.id.panel4);
+			switch(view.getId()){
+				case R.id.b_panel1:
+					p1.setVisibility(View.VISIBLE);
+					p2.setVisibility(View.GONE);
+					p3.setVisibility(View.GONE);
+					p4.setVisibility(View.GONE);
+					break;
+				case R.id.b_panel2:				
+					p2.setVisibility(View.VISIBLE);
+					p1.setVisibility(View.GONE);
+					p3.setVisibility(View.GONE);
+					p4.setVisibility(View.GONE);
+					break;
+				case R.id.b_panel3:
+					p3.setVisibility(View.VISIBLE);
+					p1.setVisibility(View.GONE);
+					p2.setVisibility(View.GONE);
+					p4.setVisibility(View.GONE);
+					break;
+				case R.id.b_panel4:
+					p4.setVisibility(View.VISIBLE);
+					p1.setVisibility(View.GONE);
+					p2.setVisibility(View.GONE);
+					p3.setVisibility(View.GONE);
+					break;
+			}
+		}
 }
