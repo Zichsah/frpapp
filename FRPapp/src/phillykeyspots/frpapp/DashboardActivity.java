@@ -265,7 +265,7 @@ public class DashboardActivity extends FragmentActivity {
 				break;
 		}
 		Intent intent = new Intent(this, EventsActivity.class);
-		intent.putExtra("EXTRA_MESSAGE_KEYSPOTS", query);
+		intent.putExtra("EXTRA_MESSAGE", query);
 		startActivity(intent);
 	}
 	
