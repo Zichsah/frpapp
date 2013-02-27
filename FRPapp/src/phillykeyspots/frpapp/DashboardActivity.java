@@ -35,12 +35,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.Window;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -120,7 +115,6 @@ public class DashboardActivity extends FragmentActivity {
 		
 		window_listener = new OnInfoWindowClickListener(){
 
-			@Override
 			public void onInfoWindowClick(Marker mark) {
 				Intent intent = new Intent(dash, KeyspotActivity.class);
 				intent.putExtra("Name", mark.getTitle());
