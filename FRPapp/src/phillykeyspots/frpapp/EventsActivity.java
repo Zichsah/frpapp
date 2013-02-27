@@ -5,7 +5,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -23,6 +25,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -31,8 +34,16 @@ import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class EventsActivity extends Activity {
 	public static final String WIFI = "Wi-Fi";
@@ -49,10 +60,15 @@ public class EventsActivity extends Activity {
 	
 	// The BroadcastReceiver that tracks network connectivity changes.
     private NetworkReceiver receiver = new NetworkReceiver();
+    
+    public ArrayList<HashMap<String, String>> eventTitles = new ArrayList<HashMap<String, String>>();
+    
+    public ProgressDialog progress;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        progress = ProgressDialog.show(EventsActivity.this,"","Loading Events!",true);
         Intent intent_evnt = getIntent();
         String evnt_msg = intent_evnt.getStringExtra("EXTRA_MESSAGE");
         URL = evnt_msg;      
@@ -81,6 +97,7 @@ public class EventsActivity extends Activity {
     public void onDestroy() {
         super.onDestroy();
         if (receiver != null) {
+        	progress.dismiss();
             this.unregisterReceiver(receiver);
         }
     }
@@ -112,10 +129,9 @@ public class EventsActivity extends Activity {
 	// Displays an error if the app is unable to load content.
     private void showErrorPage() {
         setContentView(R.layout.activity_events);
+        progress.dismiss();
         // The specified network connection is not available. Displays error message.
-        WebView myWebView = (WebView) findViewById(R.id.webviewevents);
-        myWebView.loadData(getResources().getString(R.string.connection_error),
-                "text/html", null);
+        Toast.makeText(getBaseContext(), getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
     }
 
     // Populates the activity's options menu.
@@ -156,15 +172,47 @@ public class EventsActivity extends Activity {
 		}
 		@Override
 		protected void onPostExecute(String result) {
+			progress.dismiss();
 			setContentView(R.layout.activity_events);
-			//Display the HTML string in the UI via a WebView
-			WebView eventsWebView = (WebView) findViewById(R.id.webviewevents);
-			eventsWebView.loadData(result, "text/html", null);
+			loadList();
 		}
+	}
+	
+	public void loadList() {
+		ListAdapter adapter = new SimpleAdapter(this,eventTitles,
+				R.layout.activity_events,
+				new String[]{"title","date","keyspot","address","partner","other_info"},
+				new int[]{R.id.title,R.id.date,R.id.keyspot,R.id.e_k_address,R.id.e_partner,R.id.e_other_info});
+		//selecting single ListView item
+		ListView lv = (ListView)findViewById(android.R.id.list);
+		lv.setAdapter(adapter);
+			//listening to single listitem click
+			lv.setOnItemClickListener(new OnItemClickListener(){
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+				//getting values from selected ListItem
+				String title = ((TextView) view.findViewById(R.id.title)).getText().toString();
+				String date = ((TextView) view.findViewById(R.id.date)).getText().toString();
+				String keyspot = ((TextView) view.findViewById(R.id.keyspot)).getText().toString();
+				String address = ((TextView) view.findViewById(R.id.e_k_address)).getText().toString();
+				String partner = ((TextView) view.findViewById(R.id.e_partner)).getText().toString();
+				String other_info = ((TextView) view.findViewById(R.id.e_other_info)).getText().toString();
+						
+				//Start the new intent to view single item
+				Intent in = new Intent(getApplicationContext(), SingleEventItemActivity.class);
+				in.putExtra("title", title);
+				in.putExtra("date", date);
+				in.putExtra("keyspot", keyspot);
+				in.putExtra("address", address);
+				in.putExtra("partner", partner);
+				in.putExtra("other_info", other_info);
+				startActivity(in);
+			}
+		});
 	}
 	
 	private String loadXmlFromNetwork(String urlString) throws XmlPullParserException, IOException {
 		InputStream stream = null;
+		
 		//Instantiate the parser
 		XmlParser eventsparser = new XmlParser();
 		List<Entry> entries = null;
@@ -188,21 +236,21 @@ public class EventsActivity extends Activity {
 		
 		//Return the list of entries
 		for (Entry entry : entries){
-			htmlString.append("<span>Fetching from : " + URL + " <br/>");
-			htmlString.append("<p> <span style='color:#F17A21;'><b>" + entry.topics + "</b> : <b>" +  entry.type + " -- </span></b><span style='color:#369;'>" + entry.title + "<br/>");
-			htmlString.append(entry.training_dates + "<br/>");
-			htmlString.append("<b>KEYSPOT : </b>" + entry.keyspot + "<br/>");
-			htmlString.append(entry.street + ", " + entry.city + ", " + entry.province + " " + entry.postal_code + "<br/>");
-			htmlString.append("<b>Managing Partner : </b>" + entry.managing_partner + "<br/>");
-			htmlString.append("<b>Contact : </b>" + entry.contact + "</br>");
-			htmlString.append("<b>Email : </b>" + entry.email + "</span><br/>");
-			htmlString.append("<span style='color:#F17A21;'>Ideal for : </span><span style='color:#369;'>" + entry.level + "</span><br/>"); 
-			htmlString.append("<span style='color:#F17A21;'>More Info : </span><span style='color:#369;'>" + entry.more_info + "</span><br/>"); 
-			htmlString.append("<hr/></p>");
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("title", entry.topics + " : " + entry.type + " >> " + entry.title);
+			map.put("date",entry.training_dates);
+			map.put("keyspot", entry.keyspot);
+			map.put("address", entry.street + ",\n" + entry.city + ",\n" + entry.province + ", " + entry.postal_code);
+			map.put("partner", entry.managing_partner + "\nContact : " + entry.contact + "\nEmail : " + entry.email);
+			map.put("other_info", "Ideal for : \n" + entry.level + "\nMore Info : \n" + entry.more_info);
+			//adding HashList to ArrayList
+			eventTitles.add(map);
 		}
+		
 		return htmlString.toString();
 	}
-	
+
+
 	private InputStream downloadUrl(String urlString) throws IOException {
 		URL url = new URL(urlString);
 		HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();

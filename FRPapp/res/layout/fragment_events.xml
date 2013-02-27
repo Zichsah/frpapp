@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<LinearLayout 
+    <LinearLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
@@ -10,222 +10,254 @@
 	    android:paddingTop="5dp"
 	    android:paddingRight="16dp">
 	    
-	    <!-- Search by ZIP section -->
-	    <TextView
+	<!-- Search by ZIP section -->
+
+	    <Button android:id="@+id/b_panel1"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/byZIP_header"
-	        android:textSize="12sp" />
-	    <TextView
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/ZIP_caption"
-	        android:textSize="10sp"/>
-	    
+	        android:textSize="12sp"
+	        android:onClick="openPanel"/>
 	    <LinearLayout android:id="@+id/panel1" 
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:orientation="horizontal">
-	        <EditText android:id="@+id/enter_zip_code"
-	            android:layout_weight="1"
-	            android:layout_width="0dp"
+	        android:orientation="vertical"
+	        android:visibility="gone">
+	        <TextView android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+			    android:text="@string/ZIP_caption"
+			    android:textSize="10sp"/>
+	        <LinearLayout android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:hint="@string/ZIPtext"
-	            android:textSize="12sp"/>
-	        <Button android:id="@+id/b_events"
-	            android:layout_height="wrap_content"
-	            android:layout_width="wrap_content"
-	            android:text="@string/b_search"
-	            android:textSize="12sp"
-	            android:onClick="showEventsbyZIP"/>
+	            android:orientation="horizontal">
+		        <EditText android:id="@+id/enter_zip_code"
+				    android:layout_weight="1"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:hint="@string/ZIPtext"
+				    android:textSize="12sp"/>
+		        <Button android:id="@+id/b_events"
+				    android:layout_height="wrap_content"
+				    android:layout_width="wrap_content"
+				    android:text="@string/b_search"
+				    android:textSize="12sp"
+				    android:onClick="showEventsbyZIP"/>
+		    </LinearLayout>
 	    </LinearLayout>
 	    
+	<!-- Search by DATE section -->
 	    
-	    <!-- Search by Date section --> 
-	    <TextView
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/byDate_header"
-	        android:textSize="12sp" />
-	    <TextView
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/Date_caption"
-	        android:textSize="10sp" />
-	    <Button 
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/pick_date"
-	        android:textSize="12sp"
-	        android:onClick="showDatePickerDialog" />
-	    <!-- Search by Level section -->
+	    <Button android:id="@+id/b_panel2"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/byDate_header"
+		    android:textSize="12sp"
+		    android:onClick="openPanel"/>
+	    <LinearLayout android:id="@+id/panel2" 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:visibility="gone">
+			    <TextView
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:text="@string/Date_caption"
+			        android:textSize="10sp" />
+			    <Button 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/pick_date"
+			        android:textSize="12sp"
+			        android:onClick="showDatePickerDialog" />
+	    </LinearLayout>
 
-	    <LinearLayout android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical">
-		    <TextView
+	<!-- Search by LEVEL section -->
+	
+		<Button android:id="@+id/b_panel3"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:text="@string/byLevel_header"
-		        android:textSize="12sp" /> 
-		<RadioGroup android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="vertical">
-		    <RadioButton
-		        android:id="@+id/checkbx_all_levels"
-		        android:text="@string/checkbx_all_levels"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
 		        android:textSize="12sp"
-		        android:layout_marginBottom="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
+		        android:onClick="openPanel"/>
+		<LinearLayout android:id="@+id/panel3" 
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:text="@string/all_levels_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp"/> 
-		    <RadioButton
-		        android:id="@+id/checkbx_first_time"
-		        android:text="@string/checkbx_first_time"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textSize="12sp"
-		        android:layout_marginBottom="-10dp"
-		        android:layout_marginTop="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/first_time_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp" /> 
-		    <RadioButton
-		        android:id="@+id/checkbx_beginner"
-		        android:text="@string/checkbx_beginner"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textSize="12sp"
-		        android:layout_marginBottom="-10dp"
-		        android:layout_marginTop="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/beginner_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp" /> 
-		    <RadioButton
-		        android:id="@+id/checkbx_intermediate"
-		        android:text="@string/checkbx_intermediate"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textSize="12sp"
-		        android:paddingLeft="40dp"
-		        android:layout_marginBottom="-10dp"
-		        android:layout_marginTop="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/intermediate_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp" /> 
-		    <RadioButton
-		        android:id="@+id/checkbx_advanced"
-		        android:text="@string/checkbx_advanced"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textSize="12sp"
-		        android:layout_marginBottom="-10dp"
-		        android:layout_marginTop="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/advanced_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp" /> 
-		    <RadioButton
-		        android:id="@+id/checkbx_tech_expert"
-		        android:text="@string/checkbx_tech_expert"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textSize="12sp"
-		        android:layout_marginBottom="-10dp"
-		        android:layout_marginTop="-10dp"
-		        android:onClick="onRadioClicked"/>
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:text="@string/tech_expert_caption"
-		        android:textSize="10sp"
-		        android:paddingLeft="45dp" /> 
-		</RadioGroup>
-	    </LinearLayout> 
-	    <!-- By Topics Search -->
+		        android:orientation="vertical"
+		        android:visibility="gone">
+			<TextView android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+				android:text="@string/Level_caption"
+				android:textSize="10sp" />
+			<RadioGroup android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical">
+				<RadioButton android:id="@+id/checkbx_all_levels" 
+				    android:text="@string/checkbx_all_levels"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="12sp"
+					android:layout_marginBottom="-10dp"
+					android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/all_levels_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp"/> 
+					    <RadioButton
+					        android:id="@+id/checkbx_first_time"
+					        android:text="@string/checkbx_first_time"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-10dp"
+					        android:layout_marginTop="-10dp"
+					        android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/first_time_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp" /> 
+					    <RadioButton
+					        android:id="@+id/checkbx_beginner"
+					        android:text="@string/checkbx_beginner"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-10dp"
+					        android:layout_marginTop="-10dp"
+					        android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/beginner_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp" /> 
+					    <RadioButton
+					        android:id="@+id/checkbx_intermediate"
+					        android:text="@string/checkbx_intermediate"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:paddingLeft="40dp"
+					        android:layout_marginBottom="-10dp"
+					        android:layout_marginTop="-10dp"
+					        android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/intermediate_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp" /> 
+					    <RadioButton
+					        android:id="@+id/checkbx_advanced"
+					        android:text="@string/checkbx_advanced"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-10dp"
+					        android:layout_marginTop="-10dp"
+					        android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/advanced_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp" /> 
+					    <RadioButton
+					        android:id="@+id/checkbx_tech_expert"
+					        android:text="@string/checkbx_tech_expert"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-10dp"
+					        android:layout_marginTop="-10dp"
+					        android:onClick="onRadioClicked"/>
+					    <TextView
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:text="@string/tech_expert_caption"
+					        android:textSize="10sp"
+					        android:paddingLeft="45dp" /> 
+				</RadioGroup>
+		</LinearLayout>
+			
+	<!-- Search by TOPICS section -->
 
-	    <TextView android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/byTopics_header"
-	        android:textSize="12sp"/>
-	    <RadioGroup android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:orientation="vertical">
-		    <RadioButton
-		        	android:id="@+id/checkbx_web_access"
-			        android:text="@string/checkbx_web_access"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-		    <RadioButton
-		        	android:id="@+id/checkbx_computer_basics"
-			        android:text="@string/checkbx_computer_basics"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-		    <RadioButton
-			        android:id="@+id/checkbx_internet_basics"
-			        android:text="@string/checkbx_internet_basics"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-		    <RadioButton
-		        	android:id="@+id/checkbx_ms_office"
-			        android:text="@string/checkbx_ms_office"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-		    <RadioButton
-		        	android:id="@+id/checkbx_social_media"
-			        android:text="@string/checkbx_social_media"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-		    <RadioButton
-		        	android:id="@+id/checkbx_job_search"
-			        android:text="@string/checkbx_job_search"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:textSize="12sp"
-			        android:layout_marginBottom="-5dp"
-			        android:layout_marginTop="-5dp"
-			        android:onClick="onRadioClicked"/>
-	    </RadioGroup> 
-	</LinearLayout>
+		<Button android:id="@+id/b_panel4"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/byTopics_header"
+		    android:textSize="12sp"
+		    android:onClick="openPanel"/>
+		<LinearLayout android:id="@+id/panel4" 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:visibility="gone">
+			<TextView android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="@string/Topics_caption"
+			    android:textSize="10sp"/>
+			<RadioGroup android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        	android:orientation="vertical">
+				    <RadioButton
+				        	android:id="@+id/checkbx_web_access"
+					        android:text="@string/checkbx_web_access"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+				    <RadioButton
+				        	android:id="@+id/checkbx_computer_basics"
+					        android:text="@string/checkbx_computer_basics"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+				    <RadioButton
+					        android:id="@+id/checkbx_internet_basics"
+					        android:text="@string/checkbx_internet_basics"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+				    <RadioButton
+				        	android:id="@+id/checkbx_ms_office"
+					        android:text="@string/checkbx_ms_office"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+				    <RadioButton
+				        	android:id="@+id/checkbx_social_media"
+					        android:text="@string/checkbx_social_media"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+				    <RadioButton
+				        	android:id="@+id/checkbx_job_search"
+					        android:text="@string/checkbx_job_search"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:textSize="12sp"
+					        android:layout_marginBottom="-5dp"
+					        android:layout_marginTop="-5dp"
+					        android:onClick="onRadioClicked"/>
+			    </RadioGroup>
+		</LinearLayout>
+    </LinearLayout>
 </ScrollView>
