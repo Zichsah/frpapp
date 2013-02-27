@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- blues -->
+    <color name="blue647C">#265787</color>
+    <color name="blue659C">#6799cc</color>
+    <color name="blue271C">#9592c5</color>
+    <color name="blue291C">#a9d3e5</color>
+    <color name="blue292C">#479cd1</color>
+    <!-- oranges -->
+    <color name="orange804C">#f89939</color>
+    <color name="orange123C">#ffc430</color>
+    <color name="orange1645C">#f36c38</color>
+    <color name="orange1595C">#f47920</color>
+    <!-- greys -->
+    <color name="greyblack7u">#4d4d4f</color>
+    <!-- greens -->
+    <color name="green576C">#839a5f</color>
+    <color name="green7485C">#d0e7c5</color>
+</resources>

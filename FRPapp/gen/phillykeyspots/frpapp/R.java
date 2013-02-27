@@ -131,48 +131,86 @@ containing a value of this type.
          */
         public static final int zOrderOnTop=0x7f01000d;
     }
+    public static final class color {
+        public static final int blue271C=0x7f080002;
+        public static final int blue291C=0x7f080003;
+        public static final int blue292C=0x7f080004;
+        /**  blues 
+         */
+        public static final int blue647C=0x7f080000;
+        public static final int blue659C=0x7f080001;
+        /**  greens 
+         */
+        public static final int green576C=0x7f08000a;
+        public static final int green7485C=0x7f08000b;
+        /**  greys 
+         */
+        public static final int greyblack7u=0x7f080009;
+        public static final int orange123C=0x7f080006;
+        public static final int orange1595C=0x7f080008;
+        public static final int orange1645C=0x7f080007;
+        /**  oranges 
+         */
+        public static final int orange804C=0x7f080005;
+    }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int map_pin=0x7f020001;
     }
     public static final class id {
-        public static final int b_events=0x7f05000a;
-        public static final int b_finder=0x7f050009;
-        public static final int b_joml=0x7f05000c;
-        public static final int b_resources=0x7f05000b;
-        public static final int checkbx_advanced=0x7f050013;
-        public static final int checkbx_all_levels=0x7f05000f;
-        public static final int checkbx_beginner=0x7f050011;
-        public static final int checkbx_computer_basics=0x7f050016;
-        public static final int checkbx_first_time=0x7f050010;
-        public static final int checkbx_intermediate=0x7f050012;
-        public static final int checkbx_internet_basics=0x7f050017;
-        public static final int checkbx_job_search=0x7f05001a;
-        public static final int checkbx_ms_office=0x7f050018;
-        public static final int checkbx_social_media=0x7f050019;
-        public static final int checkbx_tech_expert=0x7f050014;
-        public static final int checkbx_web_access=0x7f050015;
-        public static final int dashboard_fragment=0x7f050008;
-        public static final int enter_zip_code=0x7f05000e;
-        public static final int finder_edit=0x7f05001b;
+        public static final int b_events=0x7f050013;
+        public static final int b_finder=0x7f050012;
+        public static final int b_joml=0x7f050015;
+        public static final int b_panel1=0x7f050016;
+        public static final int b_panel2=0x7f050019;
+        public static final int b_panel3=0x7f05001b;
+        public static final int b_panel4=0x7f050023;
+        public static final int b_resources=0x7f050014;
+        public static final int checkbx_advanced=0x7f050021;
+        public static final int checkbx_all_levels=0x7f05001d;
+        public static final int checkbx_beginner=0x7f05001f;
+        public static final int checkbx_computer_basics=0x7f050026;
+        public static final int checkbx_first_time=0x7f05001e;
+        public static final int checkbx_intermediate=0x7f050020;
+        public static final int checkbx_internet_basics=0x7f050027;
+        public static final int checkbx_job_search=0x7f05002a;
+        public static final int checkbx_ms_office=0x7f050028;
+        public static final int checkbx_social_media=0x7f050029;
+        public static final int checkbx_tech_expert=0x7f050022;
+        public static final int checkbx_web_access=0x7f050025;
+        public static final int dashboard_fragment=0x7f05000d;
+        public static final int date=0x7f050006;
+        public static final int e_address=0x7f050011;
+        public static final int e_date=0x7f05000f;
+        public static final int e_k_address=0x7f050008;
+        public static final int e_keyspot=0x7f050010;
+        public static final int e_other_info=0x7f05000a;
+        public static final int e_partner=0x7f050009;
+        public static final int e_title=0x7f05000e;
+        public static final int enter_zip_code=0x7f050018;
+        public static final int finder_edit=0x7f05002b;
         public static final int fragment_container=0x7f050004;
-        public static final int joml1=0x7f05001e;
-        public static final int joml2=0x7f05001f;
-        public static final int joml3=0x7f050020;
-        public static final int joml_eaddress=0x7f05001d;
-        public static final int keyspot_fragment_container=0x7f050006;
-        public static final int keyspot_info=0x7f050021;
-        public static final int map=0x7f05001c;
-        public static final int menu_settings=0x7f050022;
+        public static final int joml1=0x7f05002e;
+        public static final int joml2=0x7f05002f;
+        public static final int joml3=0x7f050030;
+        public static final int joml_eaddress=0x7f05002d;
+        public static final int keyspot=0x7f050007;
+        public static final int keyspot_fragment_container=0x7f05000b;
+        public static final int keyspot_info=0x7f050031;
+        public static final int map=0x7f05002c;
+        public static final int menu_settings=0x7f050032;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int panel1=0x7f05000d;
-        public static final int refresh=0x7f050024;
+        public static final int panel1=0x7f050017;
+        public static final int panel2=0x7f05001a;
+        public static final int panel3=0x7f05001c;
+        public static final int panel4=0x7f050024;
+        public static final int refresh=0x7f050034;
         public static final int satellite=0x7f050002;
-        public static final int settings=0x7f050023;
+        public static final int settings=0x7f050033;
         public static final int terrain=0x7f050003;
-        public static final int webviewevents=0x7f050005;
-        public static final int webviewkeyspots=0x7f050007;
+        public static final int title=0x7f050005;
+        public static final int webviewkeyspots=0x7f05000c;
     }
     public static final class layout {
         public static final int activity_dashboard=0x7f030000;
@@ -180,33 +218,37 @@ containing a value of this type.
         public static final int activity_keyspot=0x7f030002;
         public static final int activity_keyspots=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int fragment_dashboard=0x7f030005;
-        public static final int fragment_events=0x7f030006;
-        public static final int fragment_finder=0x7f030007;
-        public static final int fragment_joml=0x7f030008;
-        public static final int fragment_keyspot_info=0x7f030009;
-        public static final int fragment_resources=0x7f03000a;
+        public static final int activity_single_event_item=0x7f030005;
+        public static final int fragment_dashboard=0x7f030006;
+        public static final int fragment_events=0x7f030007;
+        public static final int fragment_finder=0x7f030008;
+        public static final int fragment_joml=0x7f030009;
+        public static final int fragment_keyspot_info=0x7f03000a;
+        public static final int fragment_resources=0x7f03000b;
     }
     public static final class menu {
-        public static final int activity_dashboard=0x7f090000;
-        public static final int activity_main=0x7f090001;
-        public static final int fragment_dashboard=0x7f090002;
-        public static final int fragment_events=0x7f090003;
-        public static final int fragment_joml=0x7f090004;
-        public static final int fragment_resources=0x7f090005;
-        public static final int http_feed=0x7f090006;
+        public static final int activity_dashboard=0x7f0a0000;
+        public static final int activity_main=0x7f0a0001;
+        public static final int activity_single_event_item=0x7f0a0002;
+        public static final int fragment_dashboard=0x7f0a0003;
+        public static final int fragment_events=0x7f0a0004;
+        public static final int fragment_joml=0x7f0a0005;
+        public static final int fragment_resources=0x7f0a0006;
+        public static final int http_feed=0x7f0a0007;
     }
     public static final class string {
         public static final int Date_caption=0x7f06001f;
+        public static final int Level_caption=0x7f060020;
+        public static final int Topics_caption=0x7f060021;
         public static final int ZIP_caption=0x7f06001e;
-        public static final int ZIPtext=0x7f060020;
-        public static final int advanced_caption=0x7f06002c;
-        public static final int advanced_search=0x7f060030;
-        public static final int advanced_search_caption=0x7f060031;
-        public static final int all_levels_caption=0x7f060024;
+        public static final int ZIPtext=0x7f060022;
+        public static final int advanced_caption=0x7f06002e;
+        public static final int advanced_search=0x7f060032;
+        public static final int advanced_search_caption=0x7f060033;
+        public static final int all_levels_caption=0x7f060026;
         public static final int app_name=0x7f06000b;
-        public static final int b_search=0x7f060021;
-        public static final int beginner_caption=0x7f060028;
+        public static final int b_search=0x7f060023;
+        public static final int beginner_caption=0x7f06002a;
         public static final int button_events=0x7f06000d;
         public static final int button_finder=0x7f06000c;
         public static final int button_joml=0x7f06000f;
@@ -217,22 +259,22 @@ containing a value of this type.
         public static final int byTopics_header=0x7f06001c;
         /**  Keyspot 
          */
-        public static final int byZIP_caption=0x7f060043;
+        public static final int byZIP_caption=0x7f060049;
         /**  Events filter 
          */
         public static final int byZIP_header=0x7f060019;
-        public static final int checkbx_advanced=0x7f06002b;
-        public static final int checkbx_all_levels=0x7f060023;
-        public static final int checkbx_beginner=0x7f060027;
-        public static final int checkbx_computer_basics=0x7f060033;
-        public static final int checkbx_first_time=0x7f060025;
-        public static final int checkbx_intermediate=0x7f060029;
-        public static final int checkbx_internet_basics=0x7f060034;
-        public static final int checkbx_job_search=0x7f060037;
-        public static final int checkbx_ms_office=0x7f060035;
-        public static final int checkbx_social_media=0x7f060036;
-        public static final int checkbx_tech_expert=0x7f06002d;
-        public static final int checkbx_web_access=0x7f060032;
+        public static final int checkbx_advanced=0x7f06002d;
+        public static final int checkbx_all_levels=0x7f060025;
+        public static final int checkbx_beginner=0x7f060029;
+        public static final int checkbx_computer_basics=0x7f060035;
+        public static final int checkbx_first_time=0x7f060027;
+        public static final int checkbx_intermediate=0x7f06002b;
+        public static final int checkbx_internet_basics=0x7f060036;
+        public static final int checkbx_job_search=0x7f060039;
+        public static final int checkbx_ms_office=0x7f060037;
+        public static final int checkbx_social_media=0x7f060038;
+        public static final int checkbx_tech_expert=0x7f06002f;
+        public static final int checkbx_web_access=0x7f060034;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=30] 
@@ -278,32 +320,36 @@ containing a value of this type.
         public static final int common_google_play_services_update_title=0x7f060007;
         /**  HTTP Requests 
          */
-        public static final int connection_error=0x7f060045;
-        public static final int email=0x7f060039;
-        public static final int events_loading=0x7f06002f;
-        public static final int first_time_caption=0x7f060026;
-        public static final int fname=0x7f06003a;
+        public static final int connection_error=0x7f06004b;
+        public static final int email=0x7f06003f;
+        public static final int event_date=0x7f06003b;
+        public static final int event_keyspot=0x7f06003c;
+        public static final int event_mpartner=0x7f06003d;
+        public static final int event_title=0x7f06003a;
+        public static final int events_loading=0x7f060031;
+        public static final int first_time_caption=0x7f060028;
+        public static final int fname=0x7f060040;
         public static final int hello_world=0x7f060011;
-        public static final int intermediate_caption=0x7f06002a;
+        public static final int intermediate_caption=0x7f06002c;
         /**  JOML 
          */
-        public static final int joml=0x7f060038;
-        public static final int joml1=0x7f06003f;
-        public static final int joml2=0x7f060040;
-        public static final int joml3=0x7f060041;
-        public static final int lname=0x7f06003b;
-        public static final int lost_connection=0x7f06004d;
+        public static final int joml=0x7f06003e;
+        public static final int joml1=0x7f060045;
+        public static final int joml2=0x7f060046;
+        public static final int joml3=0x7f060047;
+        public static final int lname=0x7f060041;
+        public static final int lost_connection=0x7f060053;
         public static final int menu_settings=0x7f060010;
-        public static final int page_title_events=0x7f060049;
-        public static final int page_title_keyspots=0x7f06004a;
-        public static final int phone=0x7f06003d;
-        public static final int phone_caption=0x7f06003e;
-        public static final int pick_date=0x7f060022;
-        public static final int refresh=0x7f060048;
-        public static final int settings=0x7f060047;
-        public static final int submit=0x7f060042;
-        public static final int tech_expert_caption=0x7f06002e;
-        public static final int title_activity_dashboard_fragment=0x7f060044;
+        public static final int page_title_events=0x7f06004f;
+        public static final int page_title_keyspots=0x7f060050;
+        public static final int phone=0x7f060043;
+        public static final int phone_caption=0x7f060044;
+        public static final int pick_date=0x7f060024;
+        public static final int refresh=0x7f06004e;
+        public static final int settings=0x7f06004d;
+        public static final int submit=0x7f060048;
+        public static final int tech_expert_caption=0x7f060030;
+        public static final int title_activity_dashboard_fragment=0x7f06004a;
         public static final int title_activity_events=0x7f060016;
         public static final int title_activity_find_events=0x7f060015;
         public static final int title_activity_find_resources=0x7f060013;
@@ -311,10 +357,11 @@ containing a value of this type.
         public static final int title_activity_keyspots=0x7f060018;
         public static final int title_activity_search_for_keyspot=0x7f060012;
         public static final int title_activity_settings=0x7f060017;
-        public static final int updated=0x7f06004b;
-        public static final int wifi_connected=0x7f06004c;
-        public static final int xml_error=0x7f060046;
-        public static final int zipcode=0x7f06003c;
+        public static final int title_activity_single_event_item=0x7f060054;
+        public static final int updated=0x7f060051;
+        public static final int wifi_connected=0x7f060052;
+        public static final int xml_error=0x7f06004c;
+        public static final int zipcode=0x7f060042;
     }
     public static final class style {
         /** 
@@ -338,11 +385,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f090001;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;
