@@ -320,7 +320,7 @@ containing a value of this type.
         public static final int common_google_play_services_update_title=0x7f060007;
         /**  HTTP Requests 
          */
-        public static final int connection_error=0x7f06004b;
+        public static final int connection_error=0x7f06004e;
         public static final int email=0x7f06003f;
         public static final int event_date=0x7f06003b;
         public static final int event_keyspot=0x7f06003c;
@@ -337,16 +337,19 @@ containing a value of this type.
         public static final int joml1=0x7f060045;
         public static final int joml2=0x7f060046;
         public static final int joml3=0x7f060047;
+        public static final int keyspot_get_directions_button=0x7f06004d;
+        public static final int keyspot_info_button=0x7f06004b;
+        public static final int keyspot_map_button=0x7f06004c;
         public static final int lname=0x7f060041;
-        public static final int lost_connection=0x7f060053;
+        public static final int lost_connection=0x7f060056;
         public static final int menu_settings=0x7f060010;
-        public static final int page_title_events=0x7f06004f;
-        public static final int page_title_keyspots=0x7f060050;
+        public static final int page_title_events=0x7f060052;
+        public static final int page_title_keyspots=0x7f060053;
         public static final int phone=0x7f060043;
         public static final int phone_caption=0x7f060044;
         public static final int pick_date=0x7f060024;
-        public static final int refresh=0x7f06004e;
-        public static final int settings=0x7f06004d;
+        public static final int refresh=0x7f060051;
+        public static final int settings=0x7f060050;
         public static final int submit=0x7f060048;
         public static final int tech_expert_caption=0x7f060030;
         public static final int title_activity_dashboard_fragment=0x7f06004a;
@@ -357,10 +360,10 @@ containing a value of this type.
         public static final int title_activity_keyspots=0x7f060018;
         public static final int title_activity_search_for_keyspot=0x7f060012;
         public static final int title_activity_settings=0x7f060017;
-        public static final int title_activity_single_event_item=0x7f060054;
-        public static final int updated=0x7f060051;
-        public static final int wifi_connected=0x7f060052;
-        public static final int xml_error=0x7f06004c;
+        public static final int title_activity_single_event_item=0x7f060057;
+        public static final int updated=0x7f060054;
+        public static final int wifi_connected=0x7f060055;
+        public static final int xml_error=0x7f06004f;
         public static final int zipcode=0x7f060042;
     }
     public static final class style {
