@@ -149,11 +149,11 @@ public class DashboardActivity extends FragmentActivity {
 		protected void onPostExecute(String result){
 
 			if (entries != null){
+				Geocoder code = new Geocoder(dash);
 				int count = 0;
 				for (Entry entry : entries){
 					if (entry.postal_code.equals(zip)){
 						count++;
-						Geocoder code = new Geocoder(dash);
 						try{
 							List<Address> coded = code.getFromLocationName(entry.latitude + entry.longitude, 1);
 							FinderFragment.mMap.addMarker(new MarkerOptions().position(new LatLng(coded.get(0).getLatitude(), coded.get(0).getLongitude())).title(entry.keyspot).snippet("Click for more info.").icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
@@ -163,10 +163,10 @@ public class DashboardActivity extends FragmentActivity {
 					}
 				}
 				if (count != 0){
-					Toast.makeText(dash, "Done Loading", Toast.LENGTH_LONG).show();
+					Toast.makeText(dash,  Integer.valueOf(count).toString()+ " Keyspots Loaded", Toast.LENGTH_LONG).show();
 				}
 				else {
-					Toast.makeText(dash, "No Results", Toast.LENGTH_LONG).show();
+					Toast.makeText(dash, "No Keyspots Found", Toast.LENGTH_LONG).show();
 				}
 			}
 			else{
