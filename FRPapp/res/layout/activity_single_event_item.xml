@@ -14,7 +14,8 @@
     <TextView android:id="@+id/e_title"
 	    android:layout_height="wrap_content"
 	    android:layout_width="match_parent"
-	    android:textSize="12sp"/>
+	    android:textSize="12sp"
+	    android:textColor="@color/orange1595C"/>
     <TextView android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:textSize="14sp"
@@ -48,7 +49,8 @@
 	<TextView android:id="@+id/e_partner"
 	    android:layout_height="wrap_content"
 	    android:layout_width="match_parent"
-	    android:textSize="12sp"/>
+	    android:textSize="12sp"
+	    android:autoLink="all"/>
 	<TextView android:id="@+id/e_other_info"
 	    android:layout_height="wrap_content"
 	    android:layout_width="match_parent"

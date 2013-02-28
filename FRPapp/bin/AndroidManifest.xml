@@ -71,6 +71,10 @@
             android:name="phillykeyspots.frpapp.SingleEventItemActivity"
             android:label="@string/title_activity_single_event_item" >
         </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.JOMLActivity"
+            android:label="@string/title_activity_joml" >
+        </activity>
     </application>
 
 </manifest>

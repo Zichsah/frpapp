@@ -1,6 +1,7 @@
 package phillykeyspots.frpapp;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -63,6 +64,7 @@ public class DashboardActivity extends FragmentActivity {
 	public static boolean refreshDisplay = true;
 	private List<Entry> entries;
 	private ProgressDialog progress;
+	private HashMap<String, String> JOMLdata = new HashMap<String, String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -308,5 +310,95 @@ public class DashboardActivity extends FragmentActivity {
 					p3.setVisibility(View.GONE);
 					break;
 			}
+		}
+		// JOML Methods
+		public void onJomlRadioClicked(View view){
+			boolean checked = ((RadioButton) view).isChecked();
+			String jomloptions = null;
+			switch(view.getId()){
+				case(R.id.joml1):
+					if(checked){
+						jomloptions = "frpmail";
+					}
+					break;
+				case(R.id.joml2):
+					if(checked){
+						jomloptions = "computertraining";
+					}
+					break;
+				case(R.id.joml3):
+					if(checked){
+						jomloptions = "events";
+					}
+					break;
+			}
+			JOMLdata.put("jomloption", jomloptions);
+		}
+		
+		public void checkjomldata(View view){
+			EditText emailText = (EditText) findViewById(R.id.joml_eaddress);
+			EditText fnameText = (EditText) findViewById(R.id.joml_fname);
+			EditText lnameText = (EditText) findViewById(R.id.joml_lname);
+			EditText zipcodeText = (EditText) findViewById(R.id.joml_zipcode);
+			EditText phoneText = (EditText) findViewById(R.id.joml_phone);
+			
+			String email = emailText.getText().toString();
+			String fname = fnameText.getText().toString();
+			String lname = lnameText.getText().toString();
+			String zipcode = zipcodeText.getText().toString();
+			String phone = phoneText.getText().toString();
+			
+			if (email.matches("")){
+				Toast.makeText(getBaseContext(), "Enter email", Toast.LENGTH_SHORT).show();
+				return;
+			} else {
+				JOMLdata.put("email", email);
+			}
+			
+			if (fname.matches("") ){
+				Toast.makeText(getBaseContext(), "Enter first name", Toast.LENGTH_SHORT).show();
+				return;
+			} else {
+				JOMLdata.put("fname", fname);
+			}
+			
+			if (lname.matches("")){
+				Toast.makeText(getBaseContext(), "Enter last name", Toast.LENGTH_SHORT).show();
+				return;
+			} else {
+				JOMLdata.put("lname", lname);
+			}
+			
+			if (zipcode.matches("")){
+				Toast.makeText(getBaseContext(), "Enter zipcode", Toast.LENGTH_SHORT).show();
+				return;
+			} else {
+				JOMLdata.put("zipcode", zipcode);
+			}
+			
+			if (phone.matches("")){
+				Toast.makeText(getBaseContext(), "Enter phone", Toast.LENGTH_SHORT).show();
+				return;
+			} else {
+				JOMLdata.put("phone", phone);
+			}
+			
+			if (JOMLdata.size() < 6) {
+				Toast.makeText(getBaseContext(), "Choose an option" , Toast.LENGTH_SHORT).show();
+			}
+			else {
+				postJomlData(JOMLdata);
+			}
+		}
+
+		private void postJomlData(HashMap<String, String> userdata) {
+			Intent intent = new Intent(this, JOMLActivity.class);
+			intent.putExtra("joml_email", userdata.get("email"));
+			intent.putExtra("joml_fname", userdata.get("fname"));
+			intent.putExtra("joml_lname", userdata.get("lname"));
+			intent.putExtra("joml_zipcode", userdata.get("zipcode"));
+			intent.putExtra("joml_phone", userdata.get("phone"));
+			intent.putExtra("joml_option", userdata.get("jomloption"));
+			startActivity(intent);
 		}
 }

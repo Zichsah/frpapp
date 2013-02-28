@@ -55,6 +55,7 @@
     <string name="event_mpartner"><b>Managing Partner</b></string>
 
     <!-- JOML -->
+    <string name="joml_caption">Enter your information to join our mailing list</string>
     <string name="joml">Will have form that sends users information into the joml webform to Drupal</string>
     <string name="email">Email</string>
     <string name="fname">First Name</string>
@@ -80,5 +81,6 @@
     <string name="wifi_connected">Wi-Fi Connected</string>
     <string name="lost_connection">Lost Connection</string>
     <string name="title_activity_single_event_item">SingleEventItemActivity</string>
+    <string name="title_activity_joml">JOMLActivity</string>
 
 </resources>

@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JOMLActivity" >
+    <TextView
+	        android:id="@+id/jomlResponse"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:textColor="@color/green576C"
+	    	android:textStyle="bold"
+       		android:padding="16dp" />
+</RelativeLayout>
