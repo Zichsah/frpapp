@@ -35,7 +35,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
@@ -43,7 +42,6 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 public class EventsActivity extends Activity {
 	public static final String WIFI = "Wi-Fi";
@@ -55,6 +53,8 @@ public class EventsActivity extends Activity {
 	private static boolean mobileConnected = true;
 	//Display refresh
 	public static boolean refreshDisplay = true;
+	// Flag to avoid refreshing list when user clicks back from single list item
+	public static boolean visited = false;
 	//User's current network setting preferences
 	public static String sPref = null;
 	
@@ -88,7 +88,8 @@ public class EventsActivity extends Activity {
         sPref = sharedPrefs.getString("listPref", "Any");
         updateConnectedFlags();
         // Only loads the page if refreshDisplay is true. Otherwise, keeps previous display. 
-        if (refreshDisplay) {
+        if (refreshDisplay && !visited) {
+        	visited = true;
             loadPage();
         }
     }
@@ -96,6 +97,7 @@ public class EventsActivity extends Activity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        visited = false;
         if (receiver != null) {
         	progress.dismiss();
             this.unregisterReceiver(receiver);
