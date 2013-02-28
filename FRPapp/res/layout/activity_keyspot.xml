@@ -11,13 +11,16 @@
             android:text="@string/keyspot_info_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:id="@+id/keyspot_info_button"
+            android:onClick="changeFragment"/>
         <Button 
             android:text="@string/keyspot_map_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        
+            android:layout_weight="1"
+            android:id="@+id/keyspot_map_button"
+            android:onClick="changeFragment"/>        
     </LinearLayout>
     <FrameLayout 
         android:id="@+id/keyspot_fragment_container"
