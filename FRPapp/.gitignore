@@ -1,3 +1,5 @@
 bin/
 .metadata
 FRPapp/bin/
+gen/
+FRPapp/gen/
