@@ -25,6 +25,11 @@
 	            android:text="@string/b_search"
 	            android:textSize="12sp"
 	            android:onClick="search"/>
+	    	<Button android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:text="@string/use_location"
+	            android:textSize="12sp"
+	            android:onClick="useLocation"/>
 		</LinearLayout>
     </LinearLayout>
 	<FrameLayout 
