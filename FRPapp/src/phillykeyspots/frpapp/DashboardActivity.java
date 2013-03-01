@@ -27,6 +27,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -136,6 +137,24 @@ public class DashboardActivity extends FragmentActivity {
 		progress = ProgressDialog.show(dash, "", "Loading...");
 		new DownloadXmlTask().execute(((EditText)findViewById(R.id.finder_edit)).getText().toString());
 	}
+	
+	public void useLocation(View view){
+		FinderFragment.mMap.clear();
+		FinderFragment.mMap.setMyLocationEnabled(true);
+		//progress = ProgressDialog.show(dash, "", "Loading...");
+		Geocoder coder = new Geocoder(dash);
+		String coded = null;
+		try{
+			coded = coder.getFromLocation(FinderFragment.mMap.getMyLocation().getLatitude(), FinderFragment.mMap.getMyLocation().getLongitude(), 1).get(0).getPostalCode();
+			
+			//new DownloadXmlTask().execute(coded.get(0).getPostalCode());
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		Toast.makeText(dash, coded, Toast.LENGTH_LONG).show();
+	}
+	
 	private class DownloadXmlTask extends AsyncTask<String, Void, String>{
 		
 		private String zip = null;
