@@ -37,6 +37,7 @@ public class FinderFragment extends Fragment {
 			mMap = frag.getMap();
 			if(mMap != null){
 				mMap.setOnInfoWindowClickListener(DashboardActivity.window_listener);
+				mMap.setMyLocationEnabled(true);
 			}
 		}
 	}
