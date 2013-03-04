@@ -41,13 +41,7 @@ public class KeyspotMapFragment extends Fragment{
 		updateInfo();
 	}
 	private void updateInfo(){
-		List<Entry> entries = DashboardActivity.keyspots.getEntries();
-		Entry entry = null;
-		for(Entry list: entries){
-			if(list.keyspot.equals(((KeyspotActivity)getActivity()).info)){
-				entry = list;
-			}
-		}
+		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		Geocoder coder = new Geocoder(getActivity());
 		try{
 			List<Address> coded = coder.getFromLocationName(entry.latitude+entry.longitude, 1);
