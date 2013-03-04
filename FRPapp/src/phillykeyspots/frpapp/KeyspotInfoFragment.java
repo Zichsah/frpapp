@@ -24,13 +24,7 @@ public class KeyspotInfoFragment extends Fragment {
 	}
 	
 	private void updateInfo(){
-		List<Entry> entries = DashboardActivity.keyspots.getEntries();
-		Entry entry = null;
-		for(Entry list: entries){
-			if(list.keyspot.equals(((KeyspotActivity)getActivity()).info)){
-				entry = list;
-			}
-		}
+		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		String[] info = {"Name: "+entry.keyspot, 
 				"Managin Partner: "+entry.managing_partner,
 				"Contact: "+entry.contact,
