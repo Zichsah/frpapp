@@ -142,19 +142,17 @@ public class DashboardActivity extends FragmentActivity {
 	
 	public void useLocation(View view){
 		FinderFragment.mMap.clear();
-		FinderFragment.mMap.setMyLocationEnabled(true);
-		//progress = ProgressDialog.show(dash, "", "Loading...");
+		progress = ProgressDialog.show(dash, "", "Loading...");
 		Geocoder coder = new Geocoder(dash);
 		String coded = null;
+		Location location = FinderFragment.mMap.getMyLocation();
 		try{
-			coded = coder.getFromLocation(FinderFragment.mMap.getMyLocation().getLatitude(), FinderFragment.mMap.getMyLocation().getLongitude(), 1).get(0).getPostalCode();
-			
-			//new DownloadXmlTask().execute(coded.get(0).getPostalCode());
+			coded = coder.getFromLocation(location.getLatitude(), location.getLongitude(), 1).get(0).getPostalCode();
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		Toast.makeText(dash, coded, Toast.LENGTH_LONG).show();
+		new DownloadXmlTask().execute(coded);
 	}
 	
 	private class DownloadXmlTask extends AsyncTask<String, Void, String>{
@@ -191,7 +189,7 @@ public class DashboardActivity extends FragmentActivity {
 				}
 			}
 			else{
-				FinderFragment.mMap.addMarker(new MarkerOptions().position(new LatLng(39.96, -75.17)).title("Keyspot Name").snippet("Click for more info").icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));	
+				Toast.makeText(dash, "Problem Downloading Keyspots", Toast.LENGTH_LONG).show();	
 			}
 			progress.dismiss();
 		}
