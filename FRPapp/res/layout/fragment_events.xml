@@ -26,7 +26,8 @@
 	        <TextView android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 			    android:text="@string/ZIP_caption"
-			    android:textSize="10sp"/>
+			    android:textSize="12sp"
+			    android:paddingLeft="8dp"/>
 	        <LinearLayout android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:orientation="horizontal">
@@ -62,13 +63,21 @@
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:text="@string/Date_caption"
-			        android:textSize="10sp" />
-			    <Button 
-			        android:layout_width="wrap_content"
+			        android:textSize="12sp" 
+			        android:paddingLeft="8dp"/>
+			    <DatePicker
+			        android:id="@+id/eventdatepicker"
+			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
-			        android:text="@string/pick_date"
-			        android:textSize="12sp"
-			        android:onClick="showDatePickerDialog" />
+			        android:calendarViewShown="true"
+			        android:spinnersShown="false"
+			        android:padding="8dp"/> 
+			    <Button android:id="@+id/b_submit_date"
+		    		android:layout_width="wrap_content"
+		    		android:layout_height="wrap_content"
+		    		android:text="@string/submit"
+		    		android:textSize="12sp"
+		    		android:onClick="submitDate"/>
 	    </LinearLayout>
 
 	<!-- Search by LEVEL section -->
@@ -87,7 +96,8 @@
 			<TextView android:layout_width="match_parent"
 			    android:layout_height="wrap_content"
 				android:text="@string/Level_caption"
-				android:textSize="10sp" />
+				android:textSize="12sp"
+				android:paddingLeft="8dp" />
 			<RadioGroup android:layout_width="match_parent"
 			    android:layout_height="wrap_content"
 			    android:orientation="vertical">
@@ -199,7 +209,8 @@
 			<TextView android:layout_width="match_parent"
 			    android:layout_height="wrap_content"
 			    android:text="@string/Topics_caption"
-			    android:textSize="10sp"/>
+			    android:textSize="12sp"
+			    android:paddingLeft="8dp"/>
 			<RadioGroup android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        	android:orientation="vertical">
