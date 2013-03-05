@@ -1,8 +1,10 @@
 package phillykeyspots.frpapp;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -12,10 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import phillykeyspots.frpapp.DatePickerFragment;
 import phillykeyspots.frpapp.EventsActivity;
-import phillykeyspots.frpapp.KEYSPOTSActivity;
-import phillykeyspots.frpapp.KEYSPOTSActivity.NetworkReceiver;
 import phillykeyspots.frpapp.R;
 import phillykeyspots.frpapp.XmlParser.Entry;
 
@@ -43,10 +42,13 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
+import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import android.widget.DatePicker.OnDateChangedListener;
 
 @SuppressLint("DefaultLocale")
 public class DashboardActivity extends FragmentActivity {
@@ -214,20 +216,6 @@ public class DashboardActivity extends FragmentActivity {
 		}
 	}
 	
-	public void showDatePickerDialog(View view) {
-		DialogFragment newFragment = new DatePickerFragment();
-		newFragment.show(getSupportFragmentManager(),"datePicker");
-	}
-	
-	public void showEventsbyZIP(View view) {
-		Intent intent = new Intent(this, EventsActivity.class);
-		EditText editText = (EditText) findViewById(R.id.enter_zip_code);
-		String query = editText.getText().toString();
-		String fullquery = "https://www.phillykeyspots.org/events.xml/?distance[postal_code]=" + query;
-		intent.putExtra("EXTRA_MESSAGE", fullquery);
-		startActivity(intent);
-	}
-	
 	public void onRadioClicked(View view){
 		//Which view is checked.
 		boolean checked = ((RadioButton) view).isChecked();
@@ -288,13 +276,6 @@ public class DashboardActivity extends FragmentActivity {
 		startActivity(intent);
 	}
 	
-	public void showKEYSPOTS(View view) {
-		Intent intent = new Intent(this, KEYSPOTSActivity.class);
-		String fullquery = "https://www.phillykeyspots.org/keyspots.xml"; 
-		intent.putExtra("EXTRA_MESSAGE_KEYSPOTS", fullquery);
-		startActivity(intent);
-	}
-	
 	// Events view filter accordion style 
 		public void openPanel(View view){
 			LinearLayout p1 = (LinearLayout)findViewById(R.id.panel1);
@@ -308,7 +289,8 @@ public class DashboardActivity extends FragmentActivity {
 					p3.setVisibility(View.GONE);
 					p4.setVisibility(View.GONE);
 					break;
-				case R.id.b_panel2:				
+				case R.id.b_panel2:	
+					readyCalendar();
 					p2.setVisibility(View.VISIBLE);
 					p1.setVisibility(View.GONE);
 					p3.setVisibility(View.GONE);
@@ -328,6 +310,33 @@ public class DashboardActivity extends FragmentActivity {
 					break;
 			}
 		}
+		
+		@SuppressLint("NewApi")
+		private void readyCalendar() {
+			Calendar calendar = Calendar.getInstance(); //Set the date
+			DatePicker eventstart = (DatePicker) findViewById(R.id.eventdatepicker);
+			CalendarView calview = eventstart.getCalendarView();
+			calview.setShowWeekNumber(false);
+			//Events date picker initialization with current date
+			eventstart.init(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH), new OnDateChangedListener(){
+				public void onDateChanged(DatePicker picker, int year, int month, int dayOfMonth){
+					String selecteddate = Integer.toString(year) + "-" + Integer.toString(month+1) + "-" + Integer.toString(dayOfMonth);
+					Toast.makeText(getBaseContext(), selecteddate, Toast.LENGTH_SHORT).show();
+				}				
+			});
+		}
+		
+		public void submitDate(View view){
+			DatePicker picker = (DatePicker) findViewById(R.id.eventdatepicker);
+			int yyyy = picker.getYear();
+			int mm = picker.getMonth();
+			int dd = picker.getDayOfMonth();
+			String querydate = "https://www.phillykeyspots.org/events.xml" + String.format (Locale.US,"/%d-%02d-%02d",yyyy,mm,dd);
+			Intent intent = new Intent(this, EventsActivity.class);
+			intent.putExtra("EXTRA_MESSAGE", querydate);
+			startActivity(intent);
+		}
+		
 		// JOML Methods
 		public void onJomlRadioClicked(View view){
 			boolean checked = ((RadioButton) view).isChecked();
