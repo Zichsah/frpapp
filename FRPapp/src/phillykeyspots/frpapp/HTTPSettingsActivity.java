@@ -15,7 +15,8 @@ public class HTTPSettingsActivity extends PreferenceActivity
         implements
             OnSharedPreferenceChangeListener {
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -23,7 +24,8 @@ public class HTTPSettingsActivity extends PreferenceActivity
         addPreferencesFromResource(R.xml.preferences); 
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     protected void onResume() {
         super.onResume();
 
@@ -31,7 +33,8 @@ public class HTTPSettingsActivity extends PreferenceActivity
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     protected void onPause() {
         super.onPause();
 
