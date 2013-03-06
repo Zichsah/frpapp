@@ -1,23 +1,17 @@
 package phillykeyspots.frpapp;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
-import org.xmlpull.v1.XmlPullParserException;
-
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import phillykeyspots.frpapp.EventsActivity;
 import phillykeyspots.frpapp.R;
 import phillykeyspots.frpapp.XmlParser.Entry;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -33,15 +27,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.Window;
-import android.webkit.WebView;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -62,7 +50,9 @@ public class DashboardActivity extends FragmentActivity {
 	public static KeyspotLoader keyspots = null;
 	private NetworkReceiver dashreceive = new NetworkReceiver();
 	private String sPref = null;
+	@SuppressWarnings("unused")
 	private static boolean wifiConnected = true;
+	@SuppressWarnings("unused")
 	private static boolean mobileConnected = true;
 	public static boolean refreshDisplay = true;
 	private List<Entry> entries;
