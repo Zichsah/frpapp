@@ -1,7 +1,5 @@
 package phillykeyspots.frpapp;
 
-import java.util.List;
-
 import phillykeyspots.frpapp.XmlParser.Entry;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
