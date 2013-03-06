@@ -9,6 +9,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * Loads the Information for an individual Keyspot.
+ * 
+ * @author btopportaldev
+ *
+ */
 public class KeyspotInfoFragment extends Fragment {
 
 	
@@ -21,6 +27,11 @@ public class KeyspotInfoFragment extends Fragment {
 		updateInfo();
 	}
 	
+	/**
+	 * Takes the entry and inputs relevant information into an array.
+	 * Creates a TextView for each item in the array.
+	 * Adds the TextView to the Layout.
+	 */
 	private void updateInfo(){
 		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		String[] info = {"Name: "+entry.keyspot, 

@@ -12,6 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
+/**
+ * Loads the Information on the Resource Page off the web site.
+ * 
+ * @author btopportaldev
+ *
+ */
+
 public class ResourcesFragment extends Fragment {
 
 	private ResourcesLoader loader;
@@ -29,15 +36,30 @@ public class ResourcesFragment extends Fragment {
 		view = (WebView)getActivity().findViewById(R.id.resources_webview);
 	}
 	
+	/**
+	 * Starts the Loading overlay.
+	 * Gathers information from the web site and loads it on the page.
+	 */
+	
 	public void onResume(){
 		super.onResume();
 		progress = ProgressDialog.show(getActivity(), "", "Loading...");
 		loader = new ResourcesLoader();
 		loader.execute();
 	}
+	
+	/**
+	 * Tells the view to insert HTML.
+	 */
+	
 	private void loadOurData(String data){
 		view.loadData(data, "text/html", null);
 	}
+	
+	/**
+	 * Loads different information based on Button pushed.
+	 * @param ID - the ID of the button pushed.
+	 */
 	
 	public void switchTab(int ID){
 		switch(ID){
@@ -53,10 +75,22 @@ public class ResourcesFragment extends Fragment {
 		}
 	}
 	
+	/**
+	 * Gathers the information on the website as HTML.
+	 * 
+	 * @author btopportaldev
+	 *
+	 */
+	
 	public class ResourcesLoader extends AsyncTask<String, Void, String>{
 
 		public String career, computer_training, public_services;
 		private Document doc;
+		
+		/** 
+		 * Loads the web site into a Document.
+		 * @param url
+		 */
 		
 		private void Load(String url){
 			try{
@@ -73,6 +107,12 @@ public class ResourcesFragment extends Fragment {
 			}
 			return null;
 		}
+		
+		/**
+		 * Breaks the Document up into the pieces that are desired.
+		 * Displays the initial page.
+		 * Dismisses Progress overlay.
+		 */
 		
 		protected void onPostExecute(String result){
 			career = doc.select("div#career_list").get(0).html();

@@ -9,6 +9,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.*;
 
+/**
+ * Fragment that contains the GoogleMap.
+ * Sets up the map with options and inflates the layout for the whole fragment.
+ * 
+ * @author btopportaldev
+ *
+ */
+
 public class FinderFragment extends Fragment {
 	
 	private SupportMapFragment frag;

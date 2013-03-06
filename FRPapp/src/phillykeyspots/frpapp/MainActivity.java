@@ -5,6 +5,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+/**
+ * This is where the Application starts.
+ * It loads a fragment that holds the Buttons
+ * 
+ * @author btopportaldev
+ *
+ */
 
 public class MainActivity extends FragmentActivity {
 
@@ -13,6 +20,13 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
+	
+	/**
+	 * Starts the DashboardActivity.
+	 * Takes the information of the button that is pressed to tell which Fragment to load.
+	 * 
+	 * @param view - the Button that was pressed.
+	 */
 	
 	public void dashboard(View view){
 		int id = view.getId();

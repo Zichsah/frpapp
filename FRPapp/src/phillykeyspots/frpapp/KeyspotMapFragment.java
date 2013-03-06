@@ -19,6 +19,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * Fragment to show individual Keyspots on a map.
+ * Has the Get Directions Button.
+ * 
+ * @author btopportaldev
+ *
+ */
+
 public class KeyspotMapFragment extends Fragment{
 
 	private SupportMapFragment frag;
@@ -39,6 +47,12 @@ public class KeyspotMapFragment extends Fragment{
 		setUpIfNeeded();
 		updateInfo();
 	}
+	
+	/**
+	 * Adds the marker onto the map using the entry's latitude and longitude.
+	 * Turns on 'MyLocation'
+	 */
+	
 	private void updateInfo(){
 		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		Geocoder coder = new Geocoder(getActivity());
