@@ -9,6 +9,13 @@ import javax.net.ssl.HttpsURLConnection;
 import phillykeyspots.frpapp.XmlParser;
 import phillykeyspots.frpapp.XmlParser.Entry;
 
+/**
+ * Class that gathers the information from the web site for the Keyspots.
+ * 
+ * @author btopportaldev
+ *
+ */
+
 public class KeyspotLoader {
 
 	private List<Entry> entries;
@@ -20,6 +27,11 @@ public class KeyspotLoader {
 		reload();
 	}
 	
+	/**
+	 * Connects to the web site and parses the information into enties.
+	 * 
+	 * @return A List of Entries.
+	 */
 	public List<Entry> reload(){
 		entries = null;
 		parser = new XmlParser();

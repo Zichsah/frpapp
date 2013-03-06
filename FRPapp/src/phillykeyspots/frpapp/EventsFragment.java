@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 
 public class EventsFragment extends Fragment {
 
+	/**
+	 * Expands the events layout for the DashboardActivity.
+	 */
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
         Bundle savedInstanceState) {
