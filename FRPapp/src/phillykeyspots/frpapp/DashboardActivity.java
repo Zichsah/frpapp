@@ -216,6 +216,10 @@ public class DashboardActivity extends FragmentActivity {
 		}
 	}
 	
+	public void resourcesButton(View view){
+		resources.switchTab(view.getId());
+	}
+	
 	public void onRadioClicked(View view){
 		//Which view is checked.
 		boolean checked = ((RadioButton) view).isChecked();
