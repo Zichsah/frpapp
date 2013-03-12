@@ -8,7 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-<<<<<<< HEAD
+
 /**
  * This is where the Application starts.
  * It loads a fragment that holds the Buttons
@@ -17,8 +17,6 @@ import android.view.View;
  *
  */
 
-=======
->>>>>>> Added ContactUs and AboutUs page
 public class MainActivity extends FragmentActivity {
 
 	@Override
@@ -27,14 +25,12 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 	}
 	
-<<<<<<< HEAD
 	/**
 	 * Starts the DashboardActivity.
 	 * Takes the information of the button that is pressed to tell which Fragment to load.
 	 * 
 	 * @param view - the Button that was pressed.
 	 */
-=======
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -58,7 +54,6 @@ public class MainActivity extends FragmentActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
->>>>>>> Added ContactUs and AboutUs page
 	
 	public void dashboard(View view){
 		int id = view.getId();
