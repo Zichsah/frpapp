@@ -95,7 +95,18 @@ public class JOMLActivity extends Activity {
 	 * @author btopportal
 	 */
 	private class postJomlFormData extends AsyncTask<String,Void,String>{
-		
+		/**
+		 * Attempts to post the user's information,
+		 * on success a toast pop's up with the confirmation message
+		 * if an error occurs, a connection error message is shown
+		 * 
+		 * @author btopportal
+		 * @param urls - a string containing the query url
+		 * @return postJomlData
+		 * @return connection_error
+		 * @return xml_error
+		 * @see JOMLActivity#postJomlData(String)
+		 */
 		@Override
 		protected String doInBackground(String...urls){
 			try {
@@ -106,6 +117,11 @@ public class JOMLActivity extends Activity {
 				return getResources().getString(R.string.xml_error);
 			}
 		}
+		/**
+		 * called when the post is finished
+		 * and either displays a success message or an error message
+		 * @author btopportal
+		 */
 		@Override
 		protected void onPostExecute(String result){
 			progress.dismiss();
@@ -115,6 +131,14 @@ public class JOMLActivity extends Activity {
 		}
 	}
 	
+	/**
+	 * Posting the user's data to phillykeyspots.org
+	 * @author btopportal
+	 * @param urlString - the url containing the query
+	 * @return responseBody - the string containing the response either a confirmation or an error
+	 * @throws XmlPullParserException
+	 * @throws IOException
+	 */
 	private String postJomlData(String urlString) throws XmlPullParserException, IOException {		
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpPost httppost = new HttpPost(urlString);
