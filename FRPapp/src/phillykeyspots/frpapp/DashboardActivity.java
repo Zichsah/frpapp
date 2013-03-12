@@ -1,23 +1,17 @@
 package phillykeyspots.frpapp;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-
-import org.xmlpull.v1.XmlPullParserException;
-
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import phillykeyspots.frpapp.EventsActivity;
 import phillykeyspots.frpapp.R;
 import phillykeyspots.frpapp.XmlParser.Entry;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -33,15 +27,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.Window;
-import android.webkit.WebView;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -50,7 +38,17 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 import android.widget.DatePicker.OnDateChangedListener;
 
+/**
+ * DashboardActivity is the activity that displays the fragments that make up the "Dashboard".
+ * The Finder, Events, Resources, and Joml fragments are shown from here.
+ * This is where the majority of the Application will take place and is the portal to all the information.
+ * 
+ * @author btopportaldev
+ *
+ */
+
 @SuppressLint("DefaultLocale")
+@SuppressWarnings("unused")
 public class DashboardActivity extends FragmentActivity {
 	
 	private FinderFragment finder = new FinderFragment();
@@ -69,15 +67,22 @@ public class DashboardActivity extends FragmentActivity {
 	private ProgressDialog progress;
 	private HashMap<String, String> JOMLdata = new HashMap<String, String>();
 
+	/**
+	 * Sets up the Activity. Takes the button from the Main activity pressed 
+	 * to select which of the Dashboard fragments to load. 
+	 * @param savedInstanceState - all the data the app is currently storing.
+	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dashboard);
 		
 		setUpFinderFragment();
+		//sets up the network receiver
 		this.registerReceiver(dashreceive, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 		Fragment frag = null;
-		
+		//gets the id of the button pushed on main activity and sets the fragment to display accordingly
 		switch(Integer.parseInt(getIntent().getExtras().get("ID").toString())){
 		case R.id.b_finder:
 			frag = finder;
@@ -96,6 +101,10 @@ public class DashboardActivity extends FragmentActivity {
 		
 	}
 	
+	/**
+	 * Sets up the downloading preferences
+	 */
+	
 	protected void onStart(){
 		super.onStart();
 		SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(this);
@@ -103,13 +112,21 @@ public class DashboardActivity extends FragmentActivity {
 		updateConnectedFlags();
 	}
 	
+	/**
+	 * Takes down the receiver
+	 */
+	
     protected void onDestroy() {
         super.onDestroy();
         if (dashreceive != null) {
             this.unregisterReceiver(dashreceive);
         }
     }
-
+    
+    /**
+     * Grabs information from phone to set up which networks are enabled
+     */
+    
     private void updateConnectedFlags() {
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeInfo = connMgr.getActiveNetworkInfo();
@@ -122,8 +139,15 @@ public class DashboardActivity extends FragmentActivity {
         }
     }
 	
+	/**
+	 * Creates the function for when a map marker's info window is selected.
+	 * Sends user to the Keyspot activity with the name of the Keyspot.
+	 * Name of Keyspot is used to load the information on it and make a personal map.
+	 * 
+	 * Creates @KeyspotLoader which gathers Keyspot information off the web site.
+	 */
+    
 	private void setUpFinderFragment(){
-		
 		window_listener = new OnInfoWindowClickListener(){
 
 			public void onInfoWindowClick(Marker mark) {
@@ -135,12 +159,29 @@ public class DashboardActivity extends FragmentActivity {
 		};
 		keyspots = new KeyspotLoader();
 	}
-		
+	
+	/**
+	 * Clears the Markers on the map off of it.
+	 * Begins the Progress Dialog overlay which says "Loading...".
+	 * Begins the @DownloadXmlTask which puts the Markers on the Map that correspond to the postal code provided.
+	 * 
+	 * @param view - The View of the Search Button.
+	 */
+	
 	public void search(View view){
 		FinderFragment.mMap.clear();
 		progress = ProgressDialog.show(dash, "", "Loading...");
 		new DownloadXmlTask().execute(((EditText)findViewById(R.id.finder_edit)).getText().toString());
 	}
+	
+	/**
+	 * Clears the Markers on the Map off of it.
+	 * Begins the Progress Dialog overlay which says "Loading...".
+	 * Gets the postal code of your current position using @Geocoder and @GoogleMap getMyLocation() function.
+	 * Begins the @DownloadXmlTask which puts the Markers on the Map that correspond to the postal code of your location.
+	 * 
+	 * @param view - the View of the Use My Location Button.
+	 */
 	
 	public void useLocation(View view){
 		FinderFragment.mMap.clear();
@@ -157,9 +198,20 @@ public class DashboardActivity extends FragmentActivity {
 		new DownloadXmlTask().execute(coded);
 	}
 	
+	/**
+	 * This class is what is used to Load the data and put the Markers on the Map.
+	 * 
+	 * @author btopportaldev
+	 *
+	 */
 	private class DownloadXmlTask extends AsyncTask<String, Void, String>{
 		
 		private String zip = null;
+		
+		/**
+		 * Gathers the List of Keyspots.
+		 * Stores the postal code in the variable 'zip'.
+		 */
 		
 		@Override
 		protected String doInBackground(String... params) {
@@ -167,6 +219,14 @@ public class DashboardActivity extends FragmentActivity {
 			zip = params[0];
 			return null;
 		}
+		
+		/**
+		 * Goes through all the Entries loaded and compares it's postal code to the one provided.
+		 * If they match the amount of Keyspots goes up.
+		 * The @Geocoder then finds the location of the Keyspot and creates a marker for it.
+		 * Toasts are created to provide user with information addressing the results.
+		 */
+		
 		protected void onPostExecute(String result){
 
 			if (entries != null){
@@ -198,6 +258,13 @@ public class DashboardActivity extends FragmentActivity {
 		
 	}
     
+	/**
+	 * Is a Network receiver used to help download needed information.
+	 * 
+	 * @author btopportaldev
+	 *
+	 */
+	
 	public class NetworkReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
 			ConnectivityManager connMgr =
@@ -215,6 +282,23 @@ public class DashboardActivity extends FragmentActivity {
 			}
 		}
 	}
+	
+	/**
+	 * Tells the @ResourcesFragment to change the information in it's @WebView based on the button pressed.
+	 * 
+	 * @param view - The button pressed. The id is sent to fragment to change the webview.
+	 */
+	
+	public void resourcesButton(View view){
+		resources.switchTab(view.getId());
+	}
+	
+	/**
+	 * TODO - rest of page.
+	 * Maria's Function
+	 * 
+	 * @param view
+	 */
 	
 	public void onRadioClicked(View view){
 		//Which view is checked.

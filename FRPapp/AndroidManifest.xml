@@ -38,6 +38,7 @@
 
         <activity
             android:name="phillykeyspots.frpapp.MainActivity"
+            android:screenOrientation="portrait" 
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,11 +53,13 @@
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.EventsActivity"
-            android:label="@string/title_activity_events" >
+            android:label="@string/title_activity_events"
+            android:screenOrientation="portrait"  >
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.HTTPSettingsActivity"
-            android:label="@string/title_activity_settings" >
+            android:label="@string/title_activity_settings" 
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
 
@@ -65,15 +68,26 @@
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.KeyspotActivity"
-            android:label="@string/title_activity_keyspots" >
+            android:label="@string/title_activity_keyspots" 
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.SingleEventItemActivity"
-            android:label="@string/title_activity_single_event_item" >
+            android:label="@string/title_activity_single_event_item" 
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.JOMLActivity"
-            android:label="@string/title_activity_joml" >
+            android:label="@string/title_activity_joml"
+            android:screenOrientation="portrait"  >
+        </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.AboutUsActivity"
+            android:label="@string/title_activity_about_us" >
+        </activity>
+        <activity
+            android:name="phillykeyspots.frpapp.ContactUsActivity"
+            android:label="@string/title_activity_contact_us" >
         </activity>
         <activity
             android:name="phillykeyspots.frpapp.AboutUsActivity"

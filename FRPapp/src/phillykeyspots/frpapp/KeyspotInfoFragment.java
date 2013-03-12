@@ -1,8 +1,8 @@
 package phillykeyspots.frpapp;
 
-import java.util.List;
-
+import phillykeyspots.frpapp.R.color;
 import phillykeyspots.frpapp.XmlParser.Entry;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +11,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * Loads the Information for an individual Keyspot.
+ * 
+ * @author btopportaldev
+ *
+ */
 public class KeyspotInfoFragment extends Fragment {
 
 	
@@ -23,6 +29,11 @@ public class KeyspotInfoFragment extends Fragment {
 		updateInfo();
 	}
 	
+	/**
+	 * Takes the entry and inputs relevant information into an array.
+	 * Creates a TextView for each item in the array.
+	 * Adds the TextView to the Layout.
+	 */
 	private void updateInfo(){
 		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		String[] info = {"Name: "+entry.keyspot, 
@@ -40,8 +51,10 @@ public class KeyspotInfoFragment extends Fragment {
 		LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.keyspot_info);
 		for(String line: info){
 			TextView temp = new TextView(getActivity());
-			temp.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+			temp.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
 			temp.setText(line);
+			temp.setTextColor(getResources().getColor(R.color.blue647C));
+			temp.setTextSize((float) 20);
 			layout.addView(temp);
 		}
 	}

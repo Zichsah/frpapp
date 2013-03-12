@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 
 public class DashboardFragment extends Fragment {
 
+	/**
+	 * Fragment that expands the buttons in the Main Activity. (The dashboard buttons)
+	 */
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
         Bundle savedInstanceState) {

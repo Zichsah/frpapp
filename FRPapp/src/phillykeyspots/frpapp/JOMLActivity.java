@@ -23,6 +23,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.widget.TextView;
 
+/**
+ * TODO Maria?
+ * @author btopportaldev
+ *
+ */
+
 public class JOMLActivity extends Activity {
 
 	public List< NameValuePair > jomlPairs = new ArrayList < NameValuePair > (6);

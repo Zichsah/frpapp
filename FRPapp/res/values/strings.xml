@@ -89,6 +89,13 @@
     <string name="updated">Last Updated </string>
     <string name="wifi_connected">Wi-Fi Connected</string>
     <string name="lost_connection">Lost Connection</string>
+    <string name="title_activity_single_event_item">SingleEventItemActivity</string>
+    <string name="title_activity_joml">JOMLActivity</string>
+    <!--  Resources -->
+    <string name="resources_career_button">Career</string>
+    <string name="resources_computer_training_button">Computer Training</string>
+    <string name="resources_public_services_button">Public Services</string>
+
    
     <!-- About Us -->
     <string name="whatis">What is the Freedom Rings Partnership?</string>
