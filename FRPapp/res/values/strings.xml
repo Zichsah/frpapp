@@ -89,7 +89,6 @@
     <string name="updated">Last Updated </string>
     <string name="wifi_connected">Wi-Fi Connected</string>
     <string name="lost_connection">Lost Connection</string>
-<<<<<<< HEAD
     <string name="title_activity_single_event_item">SingleEventItemActivity</string>
     <string name="title_activity_joml">JOMLActivity</string>
     <!--  Resources -->
@@ -97,7 +96,6 @@
     <string name="resources_computer_training_button">Computer Training</string>
     <string name="resources_public_services_button">Public Services</string>
 
-=======
    
     <!-- About Us -->
     <string name="whatis">What is the Freedom Rings Partnership?</string>
@@ -148,5 +146,4 @@
 	<string name="contactus">Call us today</string>
 	<string name="phillykeyspots">Phillykeyspots : 2158511990</string>
 	<string name="philly311">Philly311 : Dial 311</string>
->>>>>>> Added ContactUs and AboutUs page
 </resources>
