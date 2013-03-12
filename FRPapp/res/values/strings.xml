@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">KEYSPOTS</string>
     <string name="button_finder">Find a KEYSPOT</string>
     <string name="button_events">Find classes</string>
     <string name="button_resources">Find more resources</string>
     <string name="button_joml">Join our mailing list</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_aboutus">About Us</string>
+    <string name="menu_contactus">Contact Us</string>
     <string name="hello_world">Test!</string>
     <string name="title_activity_search_for_keyspot"> KEYSPOT FINDER</string>
     <string name="title_activity_find_resources"> RESOURCES</string>
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
-    <string name="title_activity_find_events"> TRAINING EVENTS</string>
-    <string name="title_activity_events">Events Activity</string>
+    <string name="title_activity_find_events"> EVENTS</string>
+    <string name="title_activity_events">EVENTS</string>
     <string name="title_activity_settings">Settings Activity</string>
     <string name="title_activity_keyspots">Keyspots Activity</string>
+    <string name="title_activity_single_event_item">SingleEventItemActivity</string>
+    <string name="title_activity_joml">JOMLActivity</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
     <!-- Events filter -->
     <string name="byZIP_header"><b>By ZIP</b></string>
     <string name="byDate_header"><b>By Date</b></string>
@@ -84,6 +89,7 @@
     <string name="updated">Last Updated </string>
     <string name="wifi_connected">Wi-Fi Connected</string>
     <string name="lost_connection">Lost Connection</string>
+<<<<<<< HEAD
     <string name="title_activity_single_event_item">SingleEventItemActivity</string>
     <string name="title_activity_joml">JOMLActivity</string>
     <!--  Resources -->
@@ -91,4 +97,56 @@
     <string name="resources_computer_training_button">Computer Training</string>
     <string name="resources_public_services_button">Public Services</string>
 
+=======
+   
+    <!-- About Us -->
+    <string name="whatis">What is the Freedom Rings Partnership?</string>
+    <string name="whatis_text">In the digital age, a computer and Internet access is a necessity, yet 41% of Philadelphians do no have access. Formed to tackle this problem, the Freedom Rings Parnership is comprised of grassroots organizations,government, and universities bringing Internet access, training and technology to communities citywide.</string>
+    <string name="whois">Who is it for?</string>
+    <string name="whois_text">You! Free computer use, Internet access and training are offered to anyone and everyone!</string>
+    <string name="whencan">When can I start?</string>
+    <string name="whencan_text">Anytime! Freedom Rings Partnership powered KEYSPOTS and Training Programs started popping up around town in the Summer of 2011.</string>
+    <string name="wherecan">Where can I find a location?</string>
+    <string name="wherecan_text">Trainings are offered at more than 70 Freedom Rings Partnership powered KEYSPOTS, primarily in North, South and West Philadelphia neighbourhoods. Use the KEYSPOT Finder to locate training near you.</string>
+    <string name="howcan">How can I find out more?</string>
+    <string name="howcan_text">Call 311 or the Freedom Rings Partnership Hotline at 215&#8211;851&#8211;1990. Make sure to join our mailing list to receive emails about upcoming events and offerings.</string>
+    <string name="visitus"> Visit us : www.phillykeyspots.org/about-us</string>
+    <!-- Partners -->
+    <string name="partners">Our Partners</string>
+    <string name="parksnrec">City of Philadelphia Department of Parks and Recreation</string>
+    <string name="parksnrec_text">1515 Arch Street, Floor 10, Philadelphia, PA 19102 \nPhone : 2156832109, \nEmail: Benjamin.Burenstein@phila.gov</string>
+    <string name="oit">City of Philadelphia, Office of Innovation &amp; Technology</string>
+    <string name="oit_text">1234 Market Street, Suite 1850, Philadelphia, PA 19107 \nPhone: 2156838101, \nEmail: Lindsey.keck@phila.gov</string>
+    <string name="ccp">Community College of Philadelphia</string>
+    <string name="ccp_text">1700 Spring Garden Street, Philadelphia, PA 19130 \nPhone: 2154966158, \nEmail: csinquiry@ccp.edu</string>
+    <string name="drexel">Drexel University</string>
+    <string name="drexel_text">3141 Chestnut Street, Philadelphia, PA 19104 \nPhone: 2156067848, \nEmail: btopawareness@coe.drexel.edu</string>
+    <string name="flp">Free Library of Philadelphia</string>
+    <string name="flp_text">1901 Vine Street, Philadelphia, PA 19103, \nPhone: 2156865372, \nEmail: hotspots@freelibrary.org</string>
+    <string name="mmp">Media Mobilizing Project</string>
+    <string name="mmp_text">4233 Chestnut Street, Philadelphia, PA 19143, \nPhone: 2158219632, \nEmail: info@mediamobilizingproject.org</string>
+    <string name="odat">One Day At A Time</string>
+    <string name="odat_text">2532 North Broad Street, Philadelphia, PA 19132, \nPhone: 2152667860, \nEmail: LouisS@odaat.us</string>
+    <string name="pec">People\'s Emergency Center</string>
+    <string name="pec_text">325 N.39th Street, Philadelphia, PA 19104, \nPhone: 2153827522, \nEmail: btop@pec-cares.org</string>
+    <string name="fight">Philadelphia FIGHT\'s Critical Path Project</string>
+    <string name="fight_text">1233 Locust Street, 3rd Floor, Philadelphia, PA 19107, \nPhone: 2159854448, \nEmail: critpath@critpath.org</string>
+    <string name="pha">Philadelphia Housing Authority</string>
+    <string name="pha_text">12 South 23rd Street, Philadelphia, PA 19103, \nPhone: 2156844000, \nEmail: info@pha.phila.gov</string>
+    <string name="oic">Philadelphia OIC</string>
+    <string name="oic_text">1231 N.Broad Street, Philadelphia, PA 19122, \nPhone: 2152367700, \nEmail: esmith@philaoic.org</string>
+    <string name="rutgers">Rutgers University School of Communication and Information</string>
+    <string name="rutgers_text">4 Huntington Street, New Brunswick, NJ 08901, \nPhone: 7329327500, \nEmail: sfash@rutgers.edu</string>
+    <string name="uac">Urban Affairs Coalition</string>
+    <string name="uac_text">1207 Chestnut Street, Philadelphia, PA 19107, \nPhone: 2158511990, \nEmail: REnnis@UAC.org</string>
+    <string name="wilco">Wilco Electronic Systems Inc.</string>
+    <string name="wilco_text">1035 Camp Hill Road, Fort Washington, PA 19034, \nPhone: 2155403930, \nEmail: info@wilcoinc.com</string>
+    <string name="yoacap">Youth Outreach Adolescent Community Awareness Program (YOACAP)</string>
+    <string name="yoacap_text">1207 Chestnut Street, 3rd Floor, Philadelphia, PA 19107, \nPhone: 2158511968, \nEmail: woody@yoacap.org</string>
+    
+	<!-- Contact Us -->
+	<string name="contactus">Call us today</string>
+	<string name="phillykeyspots">Phillykeyspots : 2158511990</string>
+	<string name="philly311">Philly311 : Dial 311</string>
+>>>>>>> Added ContactUs and AboutUs page
 </resources>
