@@ -47,7 +47,7 @@ public class KeyspotActivity extends FragmentActivity {
 	 * @param view - button used ot decide which fragment to load.
 	 */
 	public void changeFragment(View view){
-		((Button)view).setTextColor(Color.BLUE);
+		((Button)view).setTextColor(getResources().getColor(R.color.orange1645C));
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		switch (view.getId()){
 		case (R.id.keyspot_info_button):

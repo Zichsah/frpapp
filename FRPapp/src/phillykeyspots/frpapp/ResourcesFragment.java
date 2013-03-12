@@ -50,10 +50,16 @@ public class ResourcesFragment extends Fragment {
 	
 	/**
 	 * Tells the view to insert HTML.
+	 * Style is added here.
 	 */
 	
 	private void loadOurData(String data){
-		view.loadData(data, "text/html", null);
+		String style = "<style type='text/css'>" +
+				"h3{background-color:#479CD1;color:#ffffff;padding:3px;}" +
+				"a{color:#f89939;font-weight:700;}" +
+				"dd{color:#479cd1;}" + 
+				"</style>";
+		view.loadData(style+data, "text/html", null);
 	}
 	
 	/**
