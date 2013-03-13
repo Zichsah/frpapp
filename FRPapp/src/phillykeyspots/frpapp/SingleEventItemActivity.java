@@ -4,9 +4,22 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.TextView;
-
+/**
+ * This Activity gets the information for a single event that was clicked
+ * in the list and displays it on the screen 
+ * 
+ * @author btopportal
+ * @see EventsActivity
+ */
 public class SingleEventItemActivity extends Activity {
-
+	/**
+	 * When the activity is created the required values are gotten 
+	 * through the getStringExtra method. The strings are then used to populate
+	 * the layout for the page according to their respective textViews
+	 * 
+	 * @author btopportal
+	 * @param savedInstanceState - all the data that the app has saved
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

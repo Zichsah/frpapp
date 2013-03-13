@@ -19,8 +19,9 @@ public class HTTPSettingsActivity extends PreferenceActivity
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Loads the XML preferences file.
+        /**
+         * Loads the XML preferences file
+         */
         addPreferencesFromResource(R.xml.preferences); 
     }
 
@@ -28,8 +29,9 @@ public class HTTPSettingsActivity extends PreferenceActivity
 	@Override
     protected void onResume() {
         super.onResume();
-
-        // Registers a callback to be invoked whenever a user changes a preference.
+        /**
+         * Registers a callback to be invoked whenever a user changes a preference
+         */
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -37,18 +39,20 @@ public class HTTPSettingsActivity extends PreferenceActivity
 	@Override
     protected void onPause() {
         super.onPause();
-
-        // Unregisters the listener set in onResume().
-        // It's best practice to unregister listeners when your app isn't using them to cut down on
-        // unnecessary system overhead. You do this in onPause().
+        /**
+         * Unregisters the listener set in onResume().
+         */
         getPreferenceScreen()
                 .getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
     }
-
-    // Fires when the user changes a preference.
+    /**
+     * Fires when the user changes a preference
+     */
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        // Sets refreshDisplay to true so that when the user returns to the main
-        // activity, the display refreshes to reflect the new settings.
+    	/**
+    	 * Sets refreshDisplay to true so that when the user returns to the main
+    	 * activity, the display refreshes to reflect the new settings
+    	 */
         EventsActivity.refreshDisplay = true;
     }
 }

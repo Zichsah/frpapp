@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Expands the joml layout for the DashboardActivity.
+ * This fragment expands the JOML layout button for the DashboardActivity.
+ * 
+ * @author btopportal
+ * @see DashboardActivity
  */
 
 public class JomlFragment extends Fragment {
