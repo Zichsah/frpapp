@@ -66,5 +66,5 @@
         android:layout_height="wrap_content"
         android:text="@string/submit"
         android:textSize="12sp"
-        android:onClick="checkjomldata"/>
+        android:onClick="checkJomlData"/>
 </LinearLayout>

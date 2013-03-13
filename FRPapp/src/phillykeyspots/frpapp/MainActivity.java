@@ -38,7 +38,18 @@ public class MainActivity extends FragmentActivity {
         return true;
     }
 	
-	 // Handles the user's menu selection.
+	
+	/**
+	 * Handles the user's menu selection
+	 * Menu has two options
+	 * &nbsp; About Us - displays an about us page when selected
+	 * &nbsp; Contact Us - displays a contact page when selected
+	 * 
+	 * @author btopportal
+	 * @param item - the menu item selected
+	 */
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

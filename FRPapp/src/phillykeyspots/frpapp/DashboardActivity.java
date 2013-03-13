@@ -294,12 +294,41 @@ public class DashboardActivity extends FragmentActivity {
 	}
 	
 	/**
-	 * TODO - rest of page.
-	 * Maria's Function
+	 * The showEventsbyZIP method grabs the zipcode
+	 * that the user entered into the textbox( id : enter_zip_code) and displays a Toast asking '
+	 * them to enter a zipcode if one attempts to search 
+	 * without having entered one.
+	 * The method then builds the query/URL string and passes
+	 * it to EventsActivity through putExtra().
 	 * 
-	 * @param view
+	 * @author btopportal
+	 * @param view - the search button (id: b_events) that was clicked
+	 * @see EventsActivity
 	 */
 	
+	public void showEventsbyZIP(View view) {
+		EditText editText = (EditText) findViewById(R.id.enter_zip_code);
+		String query = editText.getText().toString();
+		if (!query.equals("")){
+			Intent intent = new Intent(this, EventsActivity.class);
+			String fullquery = "https://www.phillykeyspots.org/events.xml/?distance[postal_code]=" + query;
+			intent.putExtra("EXTRA_MESSAGE", fullquery);
+			startActivity(intent);
+		} else {
+			Toast.makeText(getBaseContext(), "Enter a zip-code", Toast.LENGTH_SHORT).show();
+		}
+	}
+	
+	/**
+	 * onRadioClicked method gets which filter button was selected and 
+	 * attaches the appropriate taxonomy term to the query 
+	 * URL and passed the complete url to the EventsActivity through
+	 * the putExtra() method.
+	 * 
+	 * @author btopportal
+	 * @param view - the radio button, either in by level or by topic filter, that was clicked 
+	 * @see EventsActivity
+	 */
 	public void onRadioClicked(View view){
 		//Which view is checked.
 		boolean checked = ((RadioButton) view).isChecked();
@@ -360,6 +389,16 @@ public class DashboardActivity extends FragmentActivity {
 		startActivity(intent);
 	}
 	
+	/**
+	 * openPanel() controls the accordion style
+	 * functionality of the events filter. It gets the id of 
+	 * the clicked button and sets it's corresponding linearlayout's visibility
+	 * to visible and sets the visibility of the other layouts to gone. The linearlayouts
+	 * are named as panel1, panel2, panel3 with their buttons as b_panel1, b_panel2 etc.
+	 * 
+	 * @author btopportal
+	 * @param view - the 'filter by' button that was clicked
+	 */
 	// Events view filter accordion style 
 		public void openPanel(View view){
 			LinearLayout p1 = (LinearLayout)findViewById(R.id.panel1);
@@ -395,6 +434,18 @@ public class DashboardActivity extends FragmentActivity {
 			}
 		}
 		
+		/**
+		 * readyCalenda() sets the byDate section up for use. It gets today's 
+		 * date and initializes the calendar then registers if the user
+		 * changes the date and sets the new date as the selected date instead of 
+		 * today's date.
+		 * 
+		 * This method is only called when the user clicks on the byDate button 
+		 * also known as panel 2 in openPanel()
+		 * 
+		 * @author btopportal 
+		 */
+		
 		@SuppressLint("NewApi")
 		private void readyCalendar() {
 			Calendar calendar = Calendar.getInstance(); //Set the date
@@ -410,6 +461,18 @@ public class DashboardActivity extends FragmentActivity {
 			});
 		}
 		
+		/**
+		 * submitDate is picked when a user clicks on the 
+		 * Submit button in the ByDate section. It grabs the 
+		 * selected date on the calendar and attaches it to the end of
+		 * the url query then passes it to the EventsActivity via the 
+		 * putExtra() method.
+		 * 
+		 * @author btopportal
+		 * @param view - the submit button for the date section
+		 * @see EventsActivity
+		 */
+		
 		public void submitDate(View view){
 			DatePicker picker = (DatePicker) findViewById(R.id.eventdatepicker);
 			int yyyy = picker.getYear();
@@ -421,7 +484,16 @@ public class DashboardActivity extends FragmentActivity {
 			startActivity(intent);
 		}
 		
-		// JOML Methods
+		/**
+		 * onJomlRadioClicked handles clicks for the JOML
+		 * form. It switches between the three options for the mailing
+		 * list and depending on the radio button clicked it adds gets
+		 * the relevant query value and adds it to a hashmap as a key-value
+		 * pair.
+		 * 
+		 * @author btopportal
+		 * @param view - the radio button clicked
+		 */
 		public void onJomlRadioClicked(View view){
 			boolean checked = ((RadioButton) view).isChecked();
 			String jomloptions = null;
@@ -445,7 +517,21 @@ public class DashboardActivity extends FragmentActivity {
 			JOMLdata.put("jomloption", jomloptions);
 		}
 		
-		public void checkjomldata(View view){
+		/**
+		 * checkJomlData() checks the information that the user entered ensuring
+		 * that the email, firstname and lastname fields are filled out.If checked
+		 * the information is added to the hashmap as keyvalue pairs. If not a toast
+		 * pops up asking them to enter thre required information.
+		 * 
+		 * If all required values have been added to the hashmap the postJomlData()
+		 * method is then called 
+		 *
+		 * @author btopportal
+		 * @param view - the submit form data button
+		 * @see postJomlData()
+		 */
+		
+		public void checkJomlData(View view){
 			EditText emailText = (EditText) findViewById(R.id.joml_eaddress);
 			EditText fnameText = (EditText) findViewById(R.id.joml_fname);
 			EditText lnameText = (EditText) findViewById(R.id.joml_lname);
@@ -462,7 +548,12 @@ public class DashboardActivity extends FragmentActivity {
 				Toast.makeText(getBaseContext(), "Enter email", Toast.LENGTH_SHORT).show();
 				return;
 			} else {
-				JOMLdata.put("email", email);
+				Boolean checkemail = isValidEmail(email);
+				if (checkemail){
+					JOMLdata.put("email", email);
+				} else {
+					Toast.makeText(getBaseContext(), "The email you entered is invalid", Toast.LENGTH_SHORT).show();
+				}
 			}
 			
 			if (fname.matches("") ){
@@ -479,19 +570,9 @@ public class DashboardActivity extends FragmentActivity {
 				JOMLdata.put("lname", lname);
 			}
 			
-			if (zipcode.matches("")){
-				Toast.makeText(getBaseContext(), "Enter zipcode", Toast.LENGTH_SHORT).show();
-				return;
-			} else {
 				JOMLdata.put("zipcode", zipcode);
-			}
 			
-			if (phone.matches("")){
-				Toast.makeText(getBaseContext(), "Enter phone", Toast.LENGTH_SHORT).show();
-				return;
-			} else {
 				JOMLdata.put("phone", phone);
-			}
 			
 			if (JOMLdata.size() < 6) {
 				Toast.makeText(getBaseContext(), "Choose an option" , Toast.LENGTH_SHORT).show();
@@ -500,7 +581,27 @@ public class DashboardActivity extends FragmentActivity {
 				postJomlData(JOMLdata);
 			}
 		}
-
+		/**
+		 * Email validation
+		 * @param target - the email to be validated
+		 * @return boolean - false or true depending on the validation
+		 */
+		@SuppressLint("NewApi")
+		public final static boolean isValidEmail(CharSequence target){
+			if(target == null) {
+				return false;
+			} else {
+				return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+			}
+		}
+		/**
+		 * postJomlData() gets the values in the hashmap based on their
+		 * keys then passes them to the JOMLActivity
+		 * 
+		 * @author btopportal
+		 * @param userdata
+		 * @see JOMLActivity
+		 */
 		private void postJomlData(HashMap<String, String> userdata) {
 			Intent intent = new Intent(this, JOMLActivity.class);
 			intent.putExtra("joml_email", userdata.get("email"));

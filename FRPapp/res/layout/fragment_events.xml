@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
@@ -10,8 +7,7 @@
 	    android:paddingTop="5dp"
 	    android:paddingRight="16dp">
 	    
-	<!-- Search by ZIP section -->
-
+<!-- Search by ZIP section -->
 	    <Button android:id="@+id/b_panel1"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
@@ -46,7 +42,7 @@
 		    </LinearLayout>
 	    </LinearLayout>
 	    
-	<!-- Search by DATE section -->
+<!-- Search by DATE section -->
 	    
 	    <Button android:id="@+id/b_panel2"
 		    android:layout_width="match_parent"
@@ -63,8 +59,8 @@
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:text="@string/Date_caption"
-			        android:textSize="12sp" 
-			        android:paddingLeft="8dp"/>
+			        android:textSize="12sp"
+			        android:paddingLeft="8dp" />
 			    <DatePicker
 			        android:id="@+id/eventdatepicker"
 			        android:layout_width="match_parent"
@@ -80,8 +76,7 @@
 		    		android:onClick="submitDate"/>
 	    </LinearLayout>
 
-	<!-- Search by LEVEL section -->
-	
+<!-- Search by LEVEL section -->
 		<Button android:id="@+id/b_panel3"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
@@ -108,12 +103,12 @@
 					android:textSize="12sp"
 					android:layout_marginBottom="-10dp"
 					android:onClick="onRadioClicked"/>
-					    <TextView
-					        android:layout_width="match_parent"
-					        android:layout_height="wrap_content"
-					        android:text="@string/all_levels_caption"
-					        android:textSize="10sp"
-					        android:paddingLeft="45dp"/> 
+				<TextView
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:text="@string/all_levels_caption"
+				    android:textSize="10sp"
+				    android:paddingLeft="45dp"/> 
 					    <RadioButton
 					        android:id="@+id/checkbx_first_time"
 					        android:text="@string/checkbx_first_time"
@@ -150,7 +145,6 @@
 					        android:layout_width="wrap_content"
 					        android:layout_height="wrap_content"
 					        android:textSize="12sp"
-					        android:paddingLeft="40dp"
 					        android:layout_marginBottom="-10dp"
 					        android:layout_marginTop="-10dp"
 					        android:onClick="onRadioClicked"/>
@@ -193,7 +187,7 @@
 				</RadioGroup>
 		</LinearLayout>
 			
-	<!-- Search by TOPICS section -->
+<!-- Search by TOPICS section -->
 
 		<Button android:id="@+id/b_panel4"
 		    android:layout_width="match_parent"
@@ -271,4 +265,3 @@
 			    </RadioGroup>
 		</LinearLayout>
     </LinearLayout>
-</ScrollView>

@@ -5,7 +5,12 @@ import android.app.Activity;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
-
+/**
+ * The AboutUsActivity is a static page that displays 
+ * information about phillyKEYSPOTS in an accordion style.
+ * 
+ * @author btopportal
+ */
 public class AboutUsActivity extends Activity {
 
 	@Override
@@ -13,7 +18,10 @@ public class AboutUsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about_us);
 		
-		//Making textview links clickable
+		/**
+		 * Making TextView links clickable
+		 * @author btopportal
+		 */
 		TextView panel5 = (TextView) findViewById(R.id.about5);
 		panel5.setMovementMethod(LinkMovementMethod.getInstance());
 	}
