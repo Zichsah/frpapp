@@ -10,9 +10,22 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.util.Xml;
 
+/**
+ * XmlParser is a general xml parser that parse the input stream for the 
+ * keyspots and the events.
+ * 
+ * @author btopportal
+ */
 public class XmlParser {
 private static final String ns = null;
-	
+	/**
+	 * instantiates a parser on events that have been gotten back
+	 * @param in - the input stream
+	 * @see Entry
+	 * @return readFeed() - the method that goes through the xml tags getting the text they surround
+	 * @throws XmlPullParserException
+	 * @throws IOException
+	 */
 	public List<Entry> parse(InputStream in) throws XmlPullParserException, IOException {
 		try {
 			XmlPullParser parser = Xml.newPullParser();
@@ -25,6 +38,16 @@ private static final String ns = null;
 		}
 	}
 	
+	/**
+	 * Goes through the different tags, using "nodes" and the starting point and "<node>" to "</node>" to
+	 * as a single event. 
+	 * 
+	 * @author btopportal 
+	 * @param parser - the parser for the input stream that was initiated earlier
+	 * @return entries - the parsed xml, with key and value pairs
+	 * @throws XmlPullParserException
+	 * @throws IOException
+	 */
 	private List<Entry> readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
 		List<Entry> entries = new ArrayList<Entry>();
 		
@@ -34,7 +57,10 @@ private static final String ns = null;
 				continue;
 			}
 			String name = parser.getName();
-			//Starts by looking for the item tag
+			/**
+			 * Starts by looking for the node tag which
+			 * marks the start of a single event
+			 */
 			if (name.equals("node")){
 				entries.add(readEntry(parser));
 			} else {
@@ -44,6 +70,12 @@ private static final String ns = null;
 		return entries;
 	}
 	
+	/**
+	 * The Entry class's attributes correspond to information about an 
+	 * event such as it's location, date, title etc,
+	 * 
+	 * @author btopportal
+	 */
 	public static class Entry {
 		
 		public final String type;
@@ -90,7 +122,17 @@ private static final String ns = null;
 			this.hours = hours;
 		}
 	}
-	
+	/**
+	 * reads the specified tag and calls the method to get the tags innertext
+	 * if a tag is not specified the parser skips it and moves on to the next tag
+	 * 
+	 * @author btopportal
+	 * @param parser - the parser for the input stream
+	 * @see XmlParser#readTag(XmlPullParser, String)
+	 * @return Entry() - an event object with it's attributes
+	 * @throws XmlPullParserException
+	 * @throws IOException
+	 */
 	private Entry readEntry(XmlPullParser parser) throws XmlPullParserException, IOException {
 		parser.require(XmlPullParser.START_TAG, ns, "node");
 		String type = null;
@@ -168,15 +210,35 @@ private static final String ns = null;
 		return new Entry(type,topics,title,training_dates,street,city,province,postal_code,keyspot,managing_partner,email,contact,level,more_info,latitude,longitude,hours,restrictions,workstations,wi_fi);
 	}
 	
-	//Read tag then read inner text
+	/**
+	 * Read the tag then read its inner text
+	 * 
+	 * @author btopportal
+	 * @param parser - the parser for the input stream
+	 * @param tag - the current tag that the parser is reading
+	 * @see XmlParser#readText(XmlPullParser)
+	 * @return tag_text - a string containing the tags's innertext
+	 * @throws IOException
+	 * @throws XmlPullParserException
+	 */
+
 	private String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
 		parser.require(XmlPullParser.START_TAG, ns, tag);
 		String tag_text = readText(parser);
 		parser.require(XmlPullParser.END_TAG, ns, tag);
 		return tag_text;
 	}
+	
+	/**
+	 * Reads the text between the tags then advances parser to the next tag
+	 * 
+	 * @author btopportal
+	 * @param parser - the input stream parser
+	 * @return xmlresult - the innertext
+	 * @throws IOException
+	 * @throws XmlPullParserException
+	 */
 
-	//Read text between the tags
 	private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
 		String xmlresult = "";
 		if(parser.next() == XmlPullParser.TEXT){
@@ -186,7 +248,15 @@ private static final String ns = null;
 		return xmlresult;
 	}
 	
-	//Skip un-required tags
+	/**
+	 * Skips the un-required tags and advances the parser to the next tag
+	 * 
+	 * @author btopportal
+	 * @param parser - the input stream parser
+	 * @throws IOException
+	 * @throws XmlPullParserException
+	 */
+
 	private void skip(XmlPullParser parser) throws IOException, XmlPullParserException {
 		if (parser.getEventType() != XmlPullParser.START_TAG){
 			throw new IllegalStateException();

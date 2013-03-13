@@ -24,8 +24,11 @@ import android.content.Intent;
 import android.widget.TextView;
 
 /**
- * TODO Maria?
- * @author btopportaldev
+ * This Activity displays a form for the user to join the 
+ * FRP mailing list. Is uses a http POST method to send information
+ * to the server and displays a success message if information is successfully sent
+ * 
+ * @author btopportal
  *
  */
 
@@ -33,6 +36,12 @@ public class JOMLActivity extends Activity {
 
 	public List< NameValuePair > jomlPairs = new ArrayList < NameValuePair > (6);
 	public ProgressDialog progress;
+	/**
+	 * When the activity is created the layout for the page is loaded and 
+	 * the data passed to the activity is fetched thought getStringExtra
+	 * @author btopportal
+	 * @param savedInstanceState - all the data that the application has saved
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,9 +56,20 @@ public class JOMLActivity extends Activity {
         
         pairJomlData(email,fname,lname,zipcode,phone,option);
 	}
-
+	/**
+	 * pairJomlData puts data entered into a list array that contains basic name value pairs
+	 * and then calls the postJomlFormData which send the information via HTTP requests
+	 * 
+	 * @author btopportal
+	 * @param email
+	 * @param fname
+	 * @param lname
+	 * @param zipcode
+	 * @param phone
+	 * @param option
+	 * @see JOMLActivity#postJomlData(String)
+	 */
 	public void pairJomlData(String email, String fname, String lname, String zipcode, String phone, String option) {
-		//Add data  into list array
 		jomlPairs.add(new BasicNameValuePair("submitted[email]", email));
 		jomlPairs.add(new BasicNameValuePair("submitted[first_name]", fname));
 		jomlPairs.add(new BasicNameValuePair("submitted[last_name]", lname));
@@ -65,10 +85,17 @@ public class JOMLActivity extends Activity {
 		jomlPairs.add(new BasicNameValuePair("form_id","webform_client_form_78"));
 		jomlPairs.add(new BasicNameValuePair("op","Submit"));
 		
-		new PostJomlFormData().execute("https://www.phillykeyspots.org/content/join-our-mailing-list");
+		new postJomlFormData().execute("https://www.phillykeyspots.org/content/join-our-mailing-list");
 	}
 	
-	private class PostJomlFormData extends AsyncTask<String,Void,String>{
+	/**
+	 * postJomlFormData uses an AsyncTask to run the POST request in the 
+	 * background, and displays a success message if the POST was successful
+	 * 
+	 * @author btopportal
+	 */
+	private class postJomlFormData extends AsyncTask<String,Void,String>{
+		
 		@Override
 		protected String doInBackground(String...urls){
 			try {
