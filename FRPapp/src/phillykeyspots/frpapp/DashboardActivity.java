@@ -548,7 +548,12 @@ public class DashboardActivity extends FragmentActivity {
 				Toast.makeText(getBaseContext(), "Enter email", Toast.LENGTH_SHORT).show();
 				return;
 			} else {
-				JOMLdata.put("email", email);
+				Boolean checkemail = isValidEmail(email);
+				if (checkemail){
+					JOMLdata.put("email", email);
+				} else {
+					Toast.makeText(getBaseContext(), "The email you entered is invalid", Toast.LENGTH_SHORT).show();
+				}
 			}
 			
 			if (fname.matches("") ){
@@ -565,19 +570,9 @@ public class DashboardActivity extends FragmentActivity {
 				JOMLdata.put("lname", lname);
 			}
 			
-			if (zipcode.matches("")){
-				Toast.makeText(getBaseContext(), "Enter zipcode", Toast.LENGTH_SHORT).show();
-				return;
-			} else {
 				JOMLdata.put("zipcode", zipcode);
-			}
 			
-			if (phone.matches("")){
-				Toast.makeText(getBaseContext(), "Enter phone", Toast.LENGTH_SHORT).show();
-				return;
-			} else {
 				JOMLdata.put("phone", phone);
-			}
 			
 			if (JOMLdata.size() < 6) {
 				Toast.makeText(getBaseContext(), "Choose an option" , Toast.LENGTH_SHORT).show();
@@ -586,7 +581,19 @@ public class DashboardActivity extends FragmentActivity {
 				postJomlData(JOMLdata);
 			}
 		}
-		
+		/**
+		 * Email validation
+		 * @param target - the email to be validated
+		 * @return boolean - false or true depending on the validation
+		 */
+		@SuppressLint("NewApi")
+		public final static boolean isValidEmail(CharSequence target){
+			if(target == null) {
+				return false;
+			} else {
+				return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+			}
+		}
 		/**
 		 * postJomlData() gets the values in the hashmap based on their
 		 * keys then passes them to the JOMLActivity
