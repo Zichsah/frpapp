@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
 
 /**
  * Loads the Information on the Resource Page off the web site.
@@ -64,19 +66,31 @@ public class ResourcesFragment extends Fragment {
 	
 	/**
 	 * Loads different information based on Button pushed.
+	 * Changes colors of tabs.
+	 * Calls loadOurData twice because doesnt always work when just called once for some reason. 
 	 * @param ID - the ID of the button pushed.
 	 */
 	
 	public void switchTab(int ID){
+		((Button)getActivity().findViewById(ID)).setTextColor(getResources().getColor(R.color.orange1645C));
 		switch(ID){
 		case (R.id.resources_career):
 			loadOurData(loader.career);
+			loadOurData(loader.career);
+			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.BLACK);
 			break;
 		case (R.id.resources_computer_training):
 			loadOurData(loader.computer_training);
+			loadOurData(loader.computer_training);
+			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.BLACK);
 			break;
 		case (R.id.resources_public_services):
 			loadOurData(loader.public_services);
+			loadOurData(loader.public_services);
+			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.BLACK);
 			break;
 		}
 	}
