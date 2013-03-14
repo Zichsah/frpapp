@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KEYSPOTS</string>
-    <string name="button_finder">Find a KEYSPOT</string>
-    <string name="button_events">Find classes</string>
-    <string name="button_resources">Find more resources</string>
-    <string name="button_joml">Join our mailing list</string>
+    <string name="button_finder">FIND A KEYSPOT</string>
+    <string name="button_events">FIND CLASSES</string>
+    <string name="button_resources">FIND MORE RESOURCES</string>
+    <string name="button_joml">JOIN OUR \nMAILING LIST</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_aboutus">About Us</string>
     <string name="menu_contactus">Contact Us</string>
@@ -21,6 +21,7 @@
     <string name="title_activity_about_us">AboutUsActivity</string>
     <string name="title_activity_contact_us">ContactUsActivity</string>
     <!-- Events filter -->
+    <string name="event_filter_caption">Search for events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
     <string name="byZIP_header"><b>By ZIP</b></string>
     <string name="byDate_header"><b>By Date</b></string>
     <string name="byLevel_header"><b>By Level</b></string>

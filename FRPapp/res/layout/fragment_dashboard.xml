@@ -16,6 +16,14 @@
         	android:layout_height="fill_parent"
         	android:layout_weight="1"
         	android:text="@string/button_finder"
+        	android:textStyle="bold"
+	        android:textColor="#FFFFFF"
+	        android:layout_marginBottom="2dp"
+	        android:layout_marginRight="2dp"
+	        android:paddingTop="40dp"
+	        android:paddingBottom="40dp"
+	        android:background="@color/orange804C"
+	        android:drawableTop="@drawable/ic_keyspots"
         	android:onClick="dashboard"/>
         
    		<!--Training events button -->
@@ -25,6 +33,14 @@
         	android:layout_height="fill_parent"
         	android:layout_weight="1"
         	android:text="@string/button_events"
+        	android:textStyle="bold"
+	        android:textColor="#FFFFFF"
+	        android:layout_marginBottom="2dp"
+	        android:layout_marginLeft="2dp"
+	        android:paddingTop="40dp"
+	        android:paddingBottom="40dp"
+	        android:background="@color/blue292C"
+	        android:drawableTop="@drawable/ic_events"
         	android:onClick="dashboard"/>
    	</LinearLayout>
 
@@ -42,6 +58,14 @@
 	        android:layout_height="fill_parent"
 	        android:layout_weight="1"
 	        android:text="@string/button_resources"
+	        android:textStyle="bold"
+	        android:textColor="#FFFFFF"
+	        android:paddingTop="35dp"
+	        android:paddingBottom="35dp"
+	        android:layout_marginTop="2dp"
+	        android:layout_marginRight="2dp"
+	        android:background="@color/blue291C"
+	        android:drawableTop="@drawable/ic_resources"
 	        android:onClick="dashboard" />
 
     	<!--Join our mailing list button-->
@@ -51,6 +75,14 @@
 	        android:layout_height="fill_parent"
 	        android:layout_weight="1"
 	        android:text="@string/button_joml"
+	        android:textStyle="bold"
+	        android:textColor="#FFFFFF"
+	        android:paddingTop="40dp"
+	        android:paddingBottom="40dp"
+	        android:layout_marginTop="2dp"
+	        android:layout_marginLeft="2dp"
+	        android:background="@color/orange123C"
+	        android:drawableTop="@drawable/ic_joml"
 	        android:onClick="dashboard"/>
     </LinearLayout>
 
