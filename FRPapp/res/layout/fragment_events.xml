@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="match_parent"
 	    android:orientation="vertical"
 	    android:paddingLeft="16dp"
 	    android:paddingTop="5dp"
 	    android:paddingRight="16dp">
+<!-- Events filter  caption -->
+	<TextView android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="14sp"
+	    android:textStyle="bold"
+	    android:textColor="@color/blue647C"
+	    android:paddingTop="16dp"
+	    android:paddingBottom="16dp"
+	    android:text="@string/event_filter_caption"/>
 	    
 <!-- Search by ZIP section -->
 	    <Button android:id="@+id/b_panel1"
@@ -37,7 +46,10 @@
 				    android:layout_height="wrap_content"
 				    android:layout_width="wrap_content"
 				    android:text="@string/b_search"
-				    android:textSize="12sp"
+				    android:textSize="14sp"
+				    android:textColor="#FFFFFF"
+				    android:textStyle="bold"
+				    android:background="@drawable/orange_rounded_button"
 				    android:onClick="showEventsbyZIP"/>
 		    </LinearLayout>
 	    </LinearLayout>
@@ -72,7 +84,10 @@
 		    		android:layout_width="wrap_content"
 		    		android:layout_height="wrap_content"
 		    		android:text="@string/submit"
-		    		android:textSize="12sp"
+		    		android:textSize="14sp"
+				    android:textColor="#FFFFFF"
+				    android:textStyle="bold"
+				    android:background="@drawable/orange_rounded_button"
 		    		android:onClick="submitDate"/>
 	    </LinearLayout>
 
