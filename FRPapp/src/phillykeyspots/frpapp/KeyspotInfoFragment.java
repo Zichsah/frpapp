@@ -1,8 +1,6 @@
 package phillykeyspots.frpapp;
 
-import phillykeyspots.frpapp.R.color;
 import phillykeyspots.frpapp.XmlParser.Entry;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

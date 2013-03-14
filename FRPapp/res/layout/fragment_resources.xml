@@ -13,6 +13,7 @@
             android:layout_weight="1"
             android:id="@+id/resources_career"
             android:text="@string/resources_career_button"
+            android:textColor="@color/orange1645C"
             android:onClick="resourcesButton"/>
         <Button 
             android:layout_width="0dp"
