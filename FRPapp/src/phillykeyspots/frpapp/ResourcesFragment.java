@@ -77,20 +77,20 @@ public class ResourcesFragment extends Fragment {
 		case (R.id.resources_career):
 			loadOurData(loader.career);
 			loadOurData(loader.career);
-			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.BLACK);
-			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.WHITE);
+			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.WHITE);
 			break;
 		case (R.id.resources_computer_training):
 			loadOurData(loader.computer_training);
 			loadOurData(loader.computer_training);
-			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.BLACK);
-			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.WHITE);
+			((Button)getActivity().findViewById(R.id.resources_public_services)).setTextColor(Color.WHITE);
 			break;
 		case (R.id.resources_public_services):
 			loadOurData(loader.public_services);
 			loadOurData(loader.public_services);
-			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.BLACK);
-			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.BLACK);
+			((Button)getActivity().findViewById(R.id.resources_career)).setTextColor(Color.WHITE);
+			((Button)getActivity().findViewById(R.id.resources_computer_training)).setTextColor(Color.WHITE);
 			break;
 		}
 	}
