@@ -14,6 +14,11 @@
             android:id="@+id/resources_career"
             android:text="@string/resources_career_button"
             android:textColor="@color/orange1645C"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:drawableTop="@drawable/ic_career"
+            android:background="@drawable/blue_rounded_button"
+            android:layout_marginRight="2dp"
             android:onClick="resourcesButton"/>
         <Button 
             android:layout_width="0dp"
@@ -21,6 +26,13 @@
             android:layout_weight="1"
             android:id="@+id/resources_computer_training"
             android:text="@string/resources_computer_training_button"
+            android:textColor="#FFFFFF"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:drawableTop="@drawable/ic_comptraining"
+            android:background="@drawable/blue_rounded_button"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
             android:onClick="resourcesButton"/>
         <Button 
             android:layout_width="0dp"
@@ -28,6 +40,12 @@
             android:layout_weight="1"
             android:id="@+id/resources_public_services"
             android:text="@string/resources_public_services_button"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/blue_rounded_button"
+            android:drawableTop="@drawable/ic_publicservices"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="2dp"
             android:onClick="resourcesButton"/>
     </LinearLayout>
 
