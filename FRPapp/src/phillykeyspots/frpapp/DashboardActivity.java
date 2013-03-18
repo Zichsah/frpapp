@@ -29,12 +29,15 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import android.widget.DatePicker.OnDateChangedListener;
 
@@ -88,7 +91,7 @@ public class DashboardActivity extends FragmentActivity {
 			frag = finder;
 			break;
 		case R.id.b_events:
-			frag = events;
+			frag = events;		
 			break;
 		case R.id.b_resources:
 			frag = resources;
@@ -98,7 +101,6 @@ public class DashboardActivity extends FragmentActivity {
 			break;
 		}
 		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, frag).commit();
-		
 	}
 	
 	/**
@@ -412,7 +414,7 @@ public class DashboardActivity extends FragmentActivity {
 					p3.setVisibility(View.GONE);
 					p4.setVisibility(View.GONE);
 					break;
-				case R.id.b_panel2:	
+				case R.id.b_panel2:					
 					readyCalendar();
 					p2.setVisibility(View.VISIBLE);
 					p1.setVisibility(View.GONE);
@@ -432,10 +434,10 @@ public class DashboardActivity extends FragmentActivity {
 					p3.setVisibility(View.GONE);
 					break;
 			}
-		}
-		
+	}
+
 		/**
-		 * readyCalenda() sets the byDate section up for use. It gets today's 
+		 * readyCalendar() sets the byDate section up for use. It gets today's 
 		 * date and initializes the calendar then registers if the user
 		 * changes the date and sets the new date as the selected date instead of 
 		 * today's date.
@@ -449,7 +451,7 @@ public class DashboardActivity extends FragmentActivity {
 		@SuppressLint("NewApi")
 		private void readyCalendar() {
 			Calendar calendar = Calendar.getInstance(); //Set the date
-			DatePicker eventstart = (DatePicker) findViewById(R.id.eventdatepicker);
+			CustomDatePicker eventstart = (CustomDatePicker) findViewById(R.id.eventdatepicker);
 			CalendarView calview = eventstart.getCalendarView();
 			calview.setShowWeekNumber(false);
 			//Events date picker initialization with current date
@@ -474,7 +476,7 @@ public class DashboardActivity extends FragmentActivity {
 		 */
 		
 		public void submitDate(View view){
-			DatePicker picker = (DatePicker) findViewById(R.id.eventdatepicker);
+			CustomDatePicker picker = (CustomDatePicker) findViewById(R.id.eventdatepicker);
 			int yyyy = picker.getYear();
 			int mm = picker.getMonth();
 			int dd = picker.getDayOfMonth();

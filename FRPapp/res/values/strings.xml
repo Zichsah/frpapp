@@ -14,12 +14,12 @@
     <string name="title_activity_join_our_mailing_list"> JOIN OUR MAILING LIST</string>
     <string name="title_activity_find_events"> EVENTS</string>
     <string name="title_activity_events">EVENTS</string>
-    <string name="title_activity_settings">Settings Activity</string>
-    <string name="title_activity_keyspots">Keyspots Activity</string>
-    <string name="title_activity_single_event_item">SingleEventItemActivity</string>
-    <string name="title_activity_joml">JOMLActivity</string>
-    <string name="title_activity_about_us">AboutUsActivity</string>
-    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="title_activity_settings">SETTINGS</string>
+    <string name="title_activity_keyspots">KEYSPOTS</string>
+    <string name="title_activity_single_event_item">EVENTS</string>
+    <string name="title_activity_joml">JOIN OUR MAILING LIST</string>
+    <string name="title_activity_about_us">ABOUT US</string>
+    <string name="title_activity_contact_us">CONTACT US</string>
     <!-- Events filter -->
     <string name="event_filter_caption">Search for events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
     <string name="byZIP_header"><b>By ZIP</b></string>
@@ -43,7 +43,7 @@
     <string name="checkbx_intermediate">Intermediate</string>
     <string name="intermediate_caption"><i>I am comfortable using the Internet</i></string>
     <string name="checkbx_advanced">Advanced</string>
-    <string name="advanced_caption"><i>Skilled with the Internet\Software</i></string>
+    <string name="advanced_caption"><i>Skilled with the Internet or Software</i></string>
     <string name="checkbx_tech_expert">Tech Expert</string>
     <string name="tech_expert_caption"><i>Highly Developed Skills</i></string>
     <string name="events_loading">Loading events, workshops, courses, training opportunities and much more offered at community locations throughout Philadelphia</string>
@@ -92,7 +92,7 @@
     <string name="lost_connection">Lost Connection</string>
 
     <!--  Resources -->
-    <string name="resources_career_button">Career</string>
+    <string name="resources_career_button">Career Assistance</string>
     <string name="resources_computer_training_button">Computer Training</string>
     <string name="resources_public_services_button">Public Services</string>
 
