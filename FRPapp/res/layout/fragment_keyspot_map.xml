@@ -14,5 +14,7 @@
         android:id="@+id/keyspot_get_directions"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+		android:textColor="#FFFFFF"
+		android:background="@drawable/orange_rounded_button"
         android:onClick="getDirections"/>
 </LinearLayout>
