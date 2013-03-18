@@ -34,7 +34,7 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDB_YJJcf-WkTy69tCqHtwtJP_yxdiy9aQ" />
+            android:value="AIzaSyBWDIVzQ4AMXA4Wmifd3urCH6K0zaxrR6g" />
 
         <activity
             android:name="phillykeyspots.frpapp.MainActivity"
