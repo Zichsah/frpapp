@@ -52,11 +52,11 @@ public class KeyspotActivity extends FragmentActivity {
 		switch (view.getId()){
 		case (R.id.keyspot_info_button):
 			ft.replace(R.id.keyspot_fragment_container, new KeyspotInfoFragment());
-			((Button)findViewById(R.id.keyspot_map_button)).setTextColor(Color.BLACK);
+			((Button)findViewById(R.id.keyspot_map_button)).setTextColor(Color.WHITE);
 			break;
 		case (R.id.keyspot_map_button):
 			ft.replace(R.id.keyspot_fragment_container, new KeyspotMapFragment());
-			((Button)findViewById(R.id.keyspot_info_button)).setTextColor(Color.BLACK);
+			((Button)findViewById(R.id.keyspot_info_button)).setTextColor(Color.WHITE);
 			break;
 		}
 		ft.commit();

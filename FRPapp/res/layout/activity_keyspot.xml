@@ -14,13 +14,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/keyspot_info_button"
+			android:background="@drawable/blue_rounded_button"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
             android:onClick="changeFragment"/>
         <Button 
             android:text="@string/keyspot_map_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"
             android:layout_weight="1"
             android:id="@+id/keyspot_map_button"
+			android:background="@drawable/blue_rounded_button"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
             android:onClick="changeFragment"/>        
     </LinearLayout>
     <FrameLayout 
