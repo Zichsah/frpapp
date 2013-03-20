@@ -15,7 +15,7 @@
         	android:layout_height="wrap_content"
         	android:text="@string/byZIP_caption"
         	android:paddingBottom="8dp"
-			android:textSize="15sp"/>
+			android:textSize="18sp"/>
 		<LinearLayout android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
@@ -24,7 +24,7 @@
 	        	android:layout_height="wrap_content"
 	        	android:hint="@string/ZIPtext"
 	        	android:id="@+id/finder_edit"
-	        	android:textSize="12sp"
+	        	android:textSize="16sp"
 	        	android:layout_marginLeft="4dp"
 	        	android:layout_marginRight="2dp"/>
 	    	<Button android:layout_height="wrap_content"
