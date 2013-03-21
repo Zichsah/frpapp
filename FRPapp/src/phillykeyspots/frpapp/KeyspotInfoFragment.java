@@ -35,7 +35,7 @@ public class KeyspotInfoFragment extends Fragment {
 	private void updateInfo(){
 		Entry entry = ((KeyspotActivity)getActivity()).getEntry();
 		String[] info = {"Name: "+entry.keyspot, 
-				"Managin Partner: "+entry.managing_partner,
+				"Managing Partner: "+entry.managing_partner,
 				"Contact: "+entry.contact,
 				"City: "+entry.city,
 				"Zip Code: "+entry.postal_code,
