@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="phillykeyspots.frpapp"
-    android:versionCode="3"
-    android:versionName="1.2" >
+    android:versionCode="4"
+    android:versionName="1.3" >
 
     <permission
         android:name="phillykeyspots.frpapp.permission.MAPS_RECEIVE"
@@ -34,7 +34,7 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBWDIVzQ4AMXA4Wmifd3urCH6K0zaxrR6g" />
+            android:value="AIzaSyDB_YJJcf-WkTy69tCqHtwtJP_yxdiy9aQ" />
 
         <activity
             android:name="phillykeyspots.frpapp.MainActivity"
