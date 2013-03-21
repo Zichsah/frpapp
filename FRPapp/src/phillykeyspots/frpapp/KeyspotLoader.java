@@ -24,7 +24,7 @@ public class KeyspotLoader {
 	private URL url;
 	
 	public KeyspotLoader(){
-		reload();
+		reload("19104");
 	}
 	
 	/**
@@ -32,11 +32,11 @@ public class KeyspotLoader {
 	 * 
 	 * @return A List of Entries.
 	 */
-	public List<Entry> reload(){
+	public List<Entry> reload(String zip){
 		entries = null;
 		parser = new XmlParser();
 		try{
-			url = new URL("https://www.phillykeyspots.org/keyspots.xml");
+			url = new URL("https://www.phillykeyspots.org/keyspot-mobile-map.xml/"+zip+"_2");
 			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 			conn.setReadTimeout(10000 /*milliseconds*/);
 			conn.setConnectTimeout(15000 /*milliseconds*/);

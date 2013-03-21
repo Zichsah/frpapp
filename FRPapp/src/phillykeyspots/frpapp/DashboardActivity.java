@@ -217,8 +217,8 @@ public class DashboardActivity extends FragmentActivity {
 		
 		@Override
 		protected String doInBackground(String... params) {
-			entries = keyspots.reload();
 			zip = params[0];
+			entries = keyspots.reload(zip);
 			return null;
 		}
 		
@@ -235,14 +235,12 @@ public class DashboardActivity extends FragmentActivity {
 				Geocoder code = new Geocoder(dash);
 				int count = 0;
 				for (Entry entry : entries){
-					if (entry.postal_code.equals(zip)){
-						count++;
-						try{
-							List<Address> coded = code.getFromLocationName(entry.latitude + entry.longitude, 1);
-							FinderFragment.mMap.addMarker(new MarkerOptions().position(new LatLng(coded.get(0).getLatitude(), coded.get(0).getLongitude())).title(entry.keyspot).snippet("Click for more info.").icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
-						}catch (Exception e){
+					count++;
+					try{
+						List<Address> coded = code.getFromLocationName(entry.latitude + entry.longitude, 1);
+						FinderFragment.mMap.addMarker(new MarkerOptions().position(new LatLng(coded.get(0).getLatitude(), coded.get(0).getLongitude())).title(entry.keyspot).snippet("Click for more info.").icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
+					}catch (Exception e){
 							e.printStackTrace();
-						}
 					}
 				}
 				if (count != 0){
